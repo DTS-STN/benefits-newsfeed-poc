@@ -19,7 +19,7 @@ export default async function Home({ params }: PageProps) {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-10 px-4">
         <Filter />
         <section className="grow">
-          <h1 className="text-4xl font-semibold mb-8">{t('main.h1')}</h1>
+          <h1 className="text-4xl font-semibold mb-8">{t("main.h1")}</h1>
           <div className="flex mb-5">
             <label htmlFor="search-benefit" className="sr-only">
               Search by benefit name or source
