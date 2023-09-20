@@ -8,7 +8,8 @@ export function middleware(request: NextRequest) {
   if (
     pathname === "/" ||
     pathname.startsWith("/_next/static") ||
-    pathname.includes('.')
+    pathname.startsWith("/api") ||
+    pathname.includes(".")
   ) {
     return NextResponse.next();
   }

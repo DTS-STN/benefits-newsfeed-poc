@@ -1,9 +1,21 @@
 {
   "title": "Benefit Newsfeed",
 
-  "main": {
-    "h1": "Benefit News Updates"
+  "header": {
+    "search": "Search Canada.ca",
+    "menu": "Menu"
   },
+
+  "filter": {
+    "heading": "Filter News by Benefit",
+    "reset": "RESET FILTERS"
+  },
+
+  "main": {
+    "h1": "Benefit News Updates",
+    "search-benefit": "Search by benefit name or source"
+  },
+
 
   "footer": {
     "goc": "Government of Canada",

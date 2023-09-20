@@ -33,11 +33,11 @@ export default async function Header({ lang }: Props) {
               </a>
               <div className="flex">
                 <label htmlFor="search-canada-ca" className="sr-only">
-                  Search Canada.ca
+                  {t('header.search')}
                 </label>
                 <input
                   id="search-canada-ca"
-                  placeholder="Search Canada.ca"
+                  placeholder={t('header.search')}
                   className="border px-3 py-1.5 outline-none"
                 ></input>
                 <button className="bg-primary self-stretch px-3 py-1.5 text-[20px] text-white">
@@ -51,7 +51,7 @@ export default async function Header({ lang }: Props) {
       <div className="max-w-7xl mx-auto">
         <nav className="px-4">
           <button className="bg-primary flex items-center gap-2 px-5 py-2.5 text-white">
-            Menu
+            {t('header.menu')}
             <span>
               <FaChevronDown />
             </span>

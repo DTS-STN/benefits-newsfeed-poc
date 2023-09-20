@@ -1,8 +1,20 @@
 {
   "title": "(FR) Benefit Newsfeed",
 
+  "header": {
+    "search": "(FR) Search Canada.ca",
+    "menu": "(FR) Menu"
+  },
+
+  "filter": {
+    "heading": "(FR) Filter News by Benefit",
+    "reset": "(FR) RESET FILTERS"
+  },
+
+
   "main": {
-    "h1": "(FR) Benefit News Updates"
+    "h1": "(FR) Benefit News Updates",
+    "search-benefit": "(FR) Search by benefit name or source"
   },
 
   "footer": {

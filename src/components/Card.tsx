@@ -1,13 +1,18 @@
-type Props = {
-  tag: "NEW" | "UPDATED";
+export type NewsItem = {
+  id: number
+  program: string,
+  date: Date,
+  tag: string,
+  title: string,
+  body: string
 };
 
-export default function Card(props: Props) {
+export default function Card(props: NewsItem) {
   return (
     <div className="py-4 space-y-2">
       <div className="space-x-2">
         <span className="text-gray-500 text-sm">
-          Guaranteed Income Supplement | September 15, 2023
+          <span>{props.program}</span> | <span>{props.date.toString()}</span>
         </span>
         <span
           className={`${
@@ -17,9 +22,9 @@ export default function Card(props: Props) {
           {props.tag}
         </span>
       </div>
-      <h2 className="text-2xl font-semibold">One time grant</h2>
+      <h2 className="text-2xl font-semibold">{props.title}</h2>
       <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci, qui?
+        {props.body}
       </p>
     </div>
   );
