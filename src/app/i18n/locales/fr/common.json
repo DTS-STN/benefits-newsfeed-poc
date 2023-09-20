@@ -1,0 +1,24 @@
+{
+  "title": "(FR) Benefit Newsfeed",
+
+  "main": {
+    "h1": "(FR) Benefit News Updates"
+  },
+
+  "footer": {
+    "goc": "(FR) Government of Canada",
+    "contact": "(FR) Contact us",
+    "news": "(FR) News",
+    "pm": "(FR) Prime Minister",
+    "dept": "(FR) Department and agencies",
+    "treaty": "(FR) Treaties, laws and regulations",
+    "about": "(FR) About government",
+    "ps": "(FR) Public service and military",
+    "reporting": "(FR) Government-wide reporting",
+    "open-gov": "(FR) Open government",
+    "terms-and-conditions": "(FR) Term and conditions",
+    "toc-link": "https://www.canada.ca/fr/transparence/avis.html",
+    "privacy": "(FR) Privacy",
+    "privacy-link": "https://www.canada.ca/fr/transparence/confidentialite.html"
+  }
+}

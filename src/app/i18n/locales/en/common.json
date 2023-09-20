@@ -1,0 +1,24 @@
+{
+  "title": "Benefit Newsfeed",
+
+  "main": {
+    "h1": "Benefit News Updates"
+  },
+
+  "footer": {
+    "goc": "Government of Canada",
+    "contact": "Contact us",
+    "news": "News",
+    "pm": "Prime Minister",
+    "dept": "Department and agencies",
+    "treaty": "Treaties, laws and regulations",
+    "about": "About government",
+    "ps": "Public service and military",
+    "reporting": "Government-wide reporting",
+    "open-gov": "Open government",
+    "terms-and-conditions": "Term and conditions",
+    "toc-link": "https://www.canada.ca/en/transparency/terms.html",
+    "privacy": "Privacy",
+    "privacy-link": "https://www.canada.ca/en/transparency/privacy.html"
+  }
+}
