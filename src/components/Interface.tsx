@@ -1,9 +1,9 @@
 "use client";
 
-import Paginate from "./Paginate";
+import Card, { NewsItem } from "./Card";
 import { IoSearch } from "react-icons/io5";
-import { NewsItem } from "./Card";
-import { ChangeEvent, useState, FormEvent } from "react";
+import { ChangeEvent, useState, FormEvent, useEffect } from "react";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 type Props = {
   data: NewsItem[];
@@ -16,12 +16,22 @@ type Props = {
 export default function Interface(props: Props) {
   const [filters, setFilters] = useState<string[]>([]);
   const [search, setSearch] = useState<string>("");
+  const [currentPage, setCurrentPage] = useState<number>(0);
+  const [filteredData, setFilteredData] = useState<NewsItem[]>(props.data);
+
+  useEffect(() => {
+    setFilteredData(props.data.filter(filterItems));
+  }, [filters, search]);
+
+  const pageIncrement = 3;
+  const totalPages = Math.ceil(filteredData.length/ pageIncrement);
 
   const programs: Set<string> = new Set(
     props.data.map(({ program }: NewsItem) => program)
   );
 
   function handleFilterChange(e: ChangeEvent<HTMLInputElement>) {
+    setCurrentPage(0);
     let name = e.target.name;
     if (filters.includes(name)) {
       setFilters((prev) => prev.filter((val) => val !== name));
@@ -32,10 +42,12 @@ export default function Interface(props: Props) {
 
   function handleResetFilters(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    setCurrentPage(0);
     setFilters([]);
   }
 
   function handleSearch(e: ChangeEvent<HTMLInputElement>) {
+    setCurrentPage(0);
     setSearch(e.target.value.trim());
   }
 
@@ -99,7 +111,43 @@ export default function Interface(props: Props) {
               <IoSearch />
             </button>
           </div>
-          <Paginate data={props.data.filter(filterItems)} />
+
+          <div>
+            <div className="bg-white divide-y px-2 md:px-10 py-5 space-y-4">
+              {filteredData
+                .slice(
+                  currentPage * pageIncrement,
+                  currentPage * pageIncrement + pageIncrement
+                )
+                .map((item: NewsItem) => (
+                  <Card {...item} key={item.id} />
+                ))}
+            </div>
+
+            <div className="flex justify-end text-xl font-[200] rounded-md mt-4">
+              {currentPage > 0 && (
+                <button
+                  className="p-3 bg-gray-200"
+                  onClick={() => setCurrentPage((prev) => prev - 1)}
+                >
+                  <FaArrowLeft className="inline" /> Prev
+                </button>
+              )}
+
+              <button className="p-3 bg-blue-600 text-white">
+                {currentPage + 1}
+              </button>
+
+              {currentPage + 1 < totalPages && (
+                <button
+                  className="p-3 bg-gray-200"
+                  onClick={() => setCurrentPage((prev) => prev + 1)}
+                >
+                  Next <FaArrowRight className="inline" />
+                </button>
+              )}
+            </div>
+          </div>
         </section>
       </div>
     </main>
