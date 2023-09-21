@@ -17,7 +17,10 @@ export default function Paginate({ data, pageIncrement = 3 }: Props) {
     <div>
       <div className="bg-white divide-y px-2 md:px-10 py-5 space-y-4">
         {data
-          .slice(currentPage, currentPage + pageIncrement)
+          .slice(
+            currentPage * pageIncrement,
+            currentPage * pageIncrement + pageIncrement
+          )
           .map((item: NewsItem) => (
             <Card {...item} key={item.id} />
           ))}
@@ -33,9 +36,11 @@ export default function Paginate({ data, pageIncrement = 3 }: Props) {
           </button>
         )}
 
-        <button className="p-3 bg-blue-600 text-white">{currentPage + 1}</button>
+        <button className="p-3 bg-blue-600 text-white">
+          {currentPage + 1}
+        </button>
 
-        {currentPage < totalPages && (
+        {currentPage + 1 < totalPages && (
           <button
             className="p-3 bg-gray-200"
             onClick={() => setCurrentPage((prev) => prev + 1)}

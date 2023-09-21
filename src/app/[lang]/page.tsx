@@ -1,4 +1,5 @@
 import { useTranslation } from "@/app/i18n";
+import { NewsItem } from "@/components/Card";
 import Interface from "@/components/Interface";
 
 type PageProps = {
@@ -13,11 +14,13 @@ export default async function Home({ params }: PageProps) {
   const { t } = await useTranslation(lang, "common");
 
   const res = await fetch("http://localhost:3000/api");
-  const data = await res.json();
+  const data: NewsItem[] = await res.json();
 
   return (
     <Interface
-      data={data}
+      data={data.sort(
+        (a, b) => Number(new Date(b.date)) - Number(new Date(a.date))
+      )}
       filterHeading={t("filter.heading")}
       resetTitle={t("filter.reset")}
       mainTitle={t("main.h1")}

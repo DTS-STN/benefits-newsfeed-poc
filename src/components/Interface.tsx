@@ -15,6 +15,7 @@ type Props = {
 
 export default function Interface(props: Props) {
   const [filters, setFilters] = useState<string[]>([]);
+  const [search, setSearch] = useState<string>("");
 
   const programs: Set<string> = new Set(
     props.data.map(({ program }: NewsItem) => program)
@@ -32,6 +33,22 @@ export default function Interface(props: Props) {
   function handleResetFilters(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setFilters([]);
+  }
+
+  function handleSearch(e: ChangeEvent<HTMLInputElement>) {
+    setSearch(e.target.value.trim());
+  }
+
+  function filterItems(item: NewsItem) {
+    if (filters.length === 0 && search === "") return true;
+    let textMatchesSearch = `${item.title} ${item.body} ${item.program}}`
+      .toLowerCase()
+      .includes(search);
+    let programMatchesFilter = filters.includes(item.program);
+
+    if (filters.length === 0 && search !== "") return textMatchesSearch;
+    if (filters.length > 0 && search === "") return programMatchesFilter;
+    return textMatchesSearch && programMatchesFilter;
   }
 
   return (
@@ -76,16 +93,13 @@ export default function Interface(props: Props) {
               id="search-benefit"
               placeholder={props.searchBenefit}
               className="border px-3 py-1.5 outline-none w-full"
+              onChange={handleSearch}
             ></input>
             <button className="bg-primary self-stretch px-3 py-1.5 text-[20px] text-white">
               <IoSearch />
             </button>
           </div>
-          <Paginate
-            data={props.data.filter((item) =>
-              filters.length ? filters.includes(item.program) : true
-            )}
-          />
+          <Paginate data={props.data.filter(filterItems)} />
         </section>
       </div>
     </main>
