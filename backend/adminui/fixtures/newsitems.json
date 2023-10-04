@@ -1,0 +1,112 @@
+[
+  {
+    "model": "adminui.newsitem",
+    "pk": 1,
+    "fields": {
+      "program": "GUARANTEED INCOME SUPPLEMENT",
+      "date": "2023-04-23",
+      "tag": "NEW",
+      "title": "One time grant",
+      "body": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci, qui?"
+    }
+  },
+  {
+    "model": "adminui.newsitem",
+    "pk": 2,
+    "fields": {
+      "program": "OLD AGE SECURITY",
+      "date": "2023-05-21",
+      "tag": "UPDATED",
+      "title": "OAS update you won't believe",
+      "body": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci, qui?"
+    }
+  },
+  {
+    "model": "adminui.newsitem",
+    "pk": 3,
+    "fields": {
+      "program": "CANADA PENSION PLAN",
+      "date": "2023-06-12",
+      "tag": "UPDATED",
+      "title": "CPP update",
+      "body": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci, qui?"
+    }
+  },
+  {
+    "model": "adminui.newsitem",
+    "pk": 4,
+    "fields": {
+      "program": "CANADA DENTAL BENEFIT",
+      "date": "2023-06-22",
+      "tag": "NEW",
+      "title": "Your dentist vist will never be the same",
+      "body": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci, qui?"
+    }
+  },
+  {
+    "model": "adminui.newsitem",
+    "pk": 5,
+    "fields": {
+      "program": "EMPLOYMENT INSURANCE",
+      "date": "2023-06-30",
+      "tag": "UPDATED",
+      "title": "EI update",
+      "body": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci, qui?"
+    }
+  },
+  {
+    "model": "adminui.newsitem",
+    "pk": 6,
+    "fields": {
+      "program": "GUARANTEED INCOME SUPPLEMENT",
+      "date": "2023-07-05",
+      "tag": "UPDATED",
+      "title": "One time grant",
+      "body": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci, qui?"
+    }
+  },
+  {
+    "model": "adminui.newsitem",
+    "pk": 7,
+    "fields": {
+      "program": "OLD AGE SECURITY",
+      "date": "2023-07-15",
+      "tag": "UPDATED",
+      "title": "OAS update you won't believe",
+      "body": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci, qui?"
+    }
+  },
+  {
+    "model": "adminui.newsitem",
+    "pk": 8,
+    "fields": {
+      "program": "CANADA PENSION PLAN",
+      "date": "2023-08-01",
+      "tag": "UPDATED",
+      "title": "CPP update",
+      "body": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci, qui?"
+    }
+  },
+  {
+    "model": "adminui.newsitem",
+    "pk": 9,
+    "fields": {
+      "program": "CANADA DENTAL BENEFIT",
+      "date": "2023-09-02",
+      "tag": "UPDATED",
+      "title": "Your dentist vist will never be the same",
+      "body": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci, qui?"
+    }
+  },
+  {
+    "model": "adminui.newsitem",
+    "pk": 10,
+    "fields": {
+      "program": "EMPLOYMENT INSURANCE",
+      "date": "2023-09-20",
+      "tag": "UPDATED",
+      "title": "EI update",
+      "body": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci, qui?"
+    }
+  }
+]
