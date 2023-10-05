@@ -6,6 +6,7 @@ import { ChangeEvent, useState, FormEvent, useEffect } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 type Props = {
+  lang: string;
   data: NewsItem[];
   filterHeading: string;
   resetTitle: string;
@@ -24,7 +25,7 @@ export default function Interface(props: Props) {
   }, [filters, search]);
 
   const pageIncrement = 3;
-  const totalPages = Math.ceil(filteredData.length/ pageIncrement);
+  const totalPages = Math.ceil(filteredData.length / pageIncrement);
 
   const programs: Set<string> = new Set(
     props.data.map(({ program }: NewsItem) => program)
@@ -53,7 +54,9 @@ export default function Interface(props: Props) {
 
   function filterItems(item: NewsItem) {
     if (filters.length === 0 && search === "") return true;
-    let textMatchesSearch = `${item.title} ${item.body} ${item.program}}`
+    let textMatchesSearch = `${
+      props.lang === "en" ? item.en_title : item.fr_title
+    } ${props.lang === "en" ? item.en_body : item.fr_body} ${item.program}}`
       .toLowerCase()
       .includes(search);
     let programMatchesFilter = filters.includes(item.program);
@@ -120,7 +123,7 @@ export default function Interface(props: Props) {
                   currentPage * pageIncrement + pageIncrement
                 )
                 .map((item: NewsItem) => (
-                  <Card {...item} key={item.id} />
+                  <Card {...item} lang={props.lang} key={item.id} />
                 ))}
             </div>
 

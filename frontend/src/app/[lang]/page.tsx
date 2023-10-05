@@ -14,13 +14,13 @@ export default async function Home({ params }: PageProps) {
   const { t } = await useTranslation(lang, "common");
 
   const res = await fetch("http://localhost:3000/api");
-  const data: NewsItem[] = await res.json();
+  const data: NewsItem[] = (await res.json()) ?? [];
+  data.sort((a, b) => Number(new Date(b.date)) - Number(new Date(a.date)));
 
   return (
     <Interface
-      data={data.sort(
-        (a, b) => Number(new Date(b.date)) - Number(new Date(a.date))
-      )}
+      lang={lang}
+      data={data}
       filterHeading={t("filter.heading")}
       resetTitle={t("filter.reset")}
       mainTitle={t("main.h1")}

@@ -3,8 +3,12 @@ export type NewsItem = {
   program: string,
   date: Date,
   tag: string,
-  title: string,
-  body: string
+  en_title: string,
+  en_body: string,
+  fr_title: string,
+  fr_body: string,
+  draft: boolean
+  lang: string
 };
 
 export default function Card(props: NewsItem) {
@@ -22,9 +26,9 @@ export default function Card(props: NewsItem) {
           {props.tag}
         </span>
       </div>
-      <h2 className="text-2xl font-semibold">{props.title}</h2>
+      <h2 className="text-2xl font-semibold">{props.lang==='en' ? props.en_title : props.fr_title}</h2>
       <p>
-        {props.body}
+        {props.lang==='en' ? props.en_body : props.fr_body}
       </p>
     </div>
   );

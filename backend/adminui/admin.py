@@ -3,7 +3,7 @@ from .models import NewsItem
 
 
 class NewsItemAdmin(admin.ModelAdmin):
-    list_display = ["title","program","tag","date"]
+    list_display = ["en_title","program","tag","date"]
 
 
 admin.site.register(NewsItem,NewsItemAdmin)

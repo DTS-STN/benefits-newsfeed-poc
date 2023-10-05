@@ -7,9 +7,9 @@ import data from "@/lib/data.json";
 export async function GET(request: Request) {
   
   // fetch from the Django rest api
-  const res = await fetch('http://localhost:8000')
+  const res = await fetch('http://localhost:8000/api/v1/get-all-news-items')
   const resData = await res.json()
 
   // TODO: swap data with resData after seeding more data in the admin ui
-  return NextResponse.json(data);
+  return NextResponse.json(resData);
 }

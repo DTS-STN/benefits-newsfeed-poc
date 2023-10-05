@@ -9,18 +9,18 @@ from .serializers import NewsItemSerializer
 ## todo: uncomment decorators at a later time, for now any request can access during development
 
 
+@api_view(['GET'])
 # @authentication_classes([TokenAuthentication])
 # @permission_classes([IsAuthenticated])
-@api_view(['GET'])
 def get_data(request):
     news_items = NewsItem.objects.all()
     serializer = NewsItemSerializer(news_items, many=True)
     return Response(serializer.data)
 
 
+@api_view(['GET'])
 # @authentication_classes([TokenAuthentication])
 # @permission_classes([IsAuthenticated])
-@api_view(['GET'])
 def get_data_by_search(request,search):
     news_items = NewsItem.objects.filter(title__icontains=search) | NewsItem.objects.filter(program__icontains=search) | \
         NewsItem.objects.filter(body__icontains=search) | NewsItem.objects.filter(tag__icontains=search)
