@@ -15,7 +15,6 @@ export default async function Home({ params }: PageProps) {
 
   const res = await fetch("http://localhost:3000/api");
   const data: NewsItem[] = (await res.json()) ?? [];
-  data.sort((a, b) => Number(new Date(b.date)) - Number(new Date(a.date)));
 
   return (
     <Interface
