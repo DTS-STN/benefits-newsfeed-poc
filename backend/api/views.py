@@ -13,7 +13,7 @@ from .serializers import NewsItemSerializer
 # @authentication_classes([TokenAuthentication])
 # @permission_classes([IsAuthenticated])
 def get_data(request):
-    news_items = NewsItem.objects.all()
+    news_items = NewsItem.objects.filter(draft=False).order_by('-date')
     serializer = NewsItemSerializer(news_items, many=True)
     return Response(serializer.data)
 
