@@ -13,7 +13,8 @@ export default async function Home({ params }: PageProps) {
 
   const { t } = await useTranslation(lang, "common");
 
-  const res = await fetch("http://localhost:3000/api");
+  // const res = await fetch("http://localhost:3000/api");
+  const res = await fetch('http://localhost:8000/api/v1/get-all-news-items', {cache: 'no-cache'})
   const data: NewsItem[] = (await res.json()) ?? [];
 
   return (
