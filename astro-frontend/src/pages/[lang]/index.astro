@@ -1,0 +1,15 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { useTranslations } from "../../i18n/utils";
+
+const { lang } = Astro.params;
+
+const t = useTranslations(lang);
+---
+
+<Layout title={t('title')}>
+  <main>
+	<a href=`/${lang==='en' ? 'fr' : 'en'}`>{lang==='en' ? 'fr' : 'en'}</a>
+
+  </main>
+</Layout>
