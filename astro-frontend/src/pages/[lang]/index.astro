@@ -8,8 +8,30 @@ const t = useTranslations(lang);
 ---
 
 <Layout title={t('title')}>
-  <main>
-	<a href=`/${lang==='en' ? 'fr' : 'en'}`>{lang==='en' ? 'fr' : 'en'}</a>
+  <main class="grow bg-gray-100">
+    
+    <div class="flex">
+      <div class="">
+        <p>filter</p>
+        <p>filter</p>
+        <p>filter</p>
+        <p>filter</p>
+        <p>filter</p>
+      </div>
+
+      <div class="grow">
+        <h1 class="text-4xl font-[500]">Benefits News Updates</h1>
+        <input type="text">
+        <div class="bg-white">
+          <div>article</div>
+          <div>article</div>
+          <div>article</div>
+          <div>article</div>
+          <div>article</div>
+        </div>
+      </div>
+
+    </div>
 
   </main>
 </Layout>
