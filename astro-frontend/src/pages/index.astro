@@ -1,1 +1,49 @@
-<h1>splash</h1>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="benefit navgiator newsfeed" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Benefit Newsfeed | (FR) Benefit Newsfeed</title>
+  </head>
+  <body
+    class="bg-[url('/splash-bg.jpg')] bg-cover h-[100dvh] grid place-content-center"
+  >
+    <div class="bg-white p-8">
+      <img src="/goc.svg" class="h-6 block w-full" />
+      <div class="mt-10 flex gap-5 justify-center">
+        <a
+          href="/en"
+          class="bg-primary text-white px-4 py-2 inline-block hover:bg-blue-950"
+        >
+          English
+        </a>
+        <a
+          href="/fr"
+          class="bg-primary text-white px-4 py-2 inline-block hover:bg-blue-950"
+        >
+          Fran&#231;ais
+        </a>
+      </div>
+    </div>
+    <div class="flex gap-5 bg-gray-300 p-8">
+      <div class="flex gap-2 text-blue-900">
+        <a
+          href="https://www.canada.ca/en/transparency/terms.html"
+          class="hover:underline text-blue-950"
+        >
+          Terms &amp; conditions
+        </a>
+        <a
+          href="https://www.canada.ca/fr/transparence/avis.html"
+          class="hover:underline text-blue-950"
+        >
+          Avis
+        </a>
+      </div>
+      <img src="/wmms-blk.svg" class="block h-5" />
+    </div>
+  </body>
+</html>

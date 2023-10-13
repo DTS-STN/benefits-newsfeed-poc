@@ -6,8 +6,10 @@ const t = useTranslations(lang);
 ---
 
 <footer>
-  <div class="bg-primary text-white">
-    <div class="grid md:grid-cols-3 gap-2 md:gap-4 md:place-content-center">
+  <div class="bg-primary text-white px-2 py-5">
+    <div
+      class="grid md:grid-cols-3 gap-2 md:gap-4 md:place-content-center max-w-7xl mx-auto"
+    >
       <a>{t("footer.contact")}</a>
       <a>{t("footer.news")}</a>
       <a>{t("footer.pm")}</a>
@@ -19,23 +21,25 @@ const t = useTranslations(lang);
       <a>{t("footer.open-gov")}</a>
     </div>
   </div>
-  <div class="flex justify-between items-center">
-    <ul
-      class="flex flex-col md:flex-row gap-2 text-sm text-primary md:list-disc list-inside"
-    >
-      <li class="list-none">
-        <a href={t("footer.toc-link")}>
-          {t("footer.terms-and-conditions")}
-        </a>
-      </li>
-      <li>
-        <a href={t("footer.privacy-link")}>{t("footer.privacy")}</a>
-      </li>
-    </ul>
-    <img
-      class="h-10"
-      src="/wmms-blk.svg"
-      alt="Symbol of the Government of Canada"
-    />
+  <div class="px-2 py-5">
+    <div class="flex justify-between items-center max-w-7xl mx-auto">
+      <ul
+        class="flex flex-col md:flex-row gap-2 text-sm text-primary md:list-disc list-inside"
+      >
+        <li class="list-none">
+          <a href={t("footer.toc-link")}>
+            {t("footer.terms-and-conditions")}
+          </a>
+        </li>
+        <li>
+          <a href={t("footer.privacy-link")}>{t("footer.privacy")}</a>
+        </li>
+      </ul>
+      <img
+        class="h-10"
+        src="/wmms-blk.svg"
+        alt="Symbol of the Government of Canada"
+      />
+    </div>
   </div>
 </footer>
