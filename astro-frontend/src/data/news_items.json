@@ -1,0 +1,102 @@
+[
+  {
+    "program": "GUARANTEED INCOME SUPPLEMENT",
+    "date": "2023-04-23",
+    "tag": "NEW",
+    "en_title": "One time grant",
+    "en_body": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci, qui?",
+    "fr_title": "(FR) One time grant",
+    "fr_body": "(FR) Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci, qui?",
+    "draft": false
+  },
+  {
+    "program": "OLD AGE SECURITY",
+    "date": "2023-05-21",
+    "tag": "UPDATED",
+    "en_title": "OAS update you won't believe",
+    "en_body": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci, qui?",
+    "fr_title": "(FR) One time grant",
+    "fr_body": "(FR) Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci, qui?",
+    "draft": false
+  },
+  {
+    "program": "CANADA PENSION PLAN",
+    "date": "2023-06-12",
+    "tag": "UPDATED",
+    "en_title": "CPP update",
+    "en_body": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci, qui?",
+    "fr_title": "(FR) One time grant",
+    "fr_body": "(FR) Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci, qui?",
+    "draft": false
+  },
+  {
+    "program": "CANADA DENTAL BENEFIT",
+    "date": "2023-06-22",
+    "tag": "NEW",
+    "en_title": "Your dentist vist will never be the same",
+    "en_body": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci, qui?",
+    "fr_title": "(FR) One time grant",
+    "fr_body": "(FR) Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci, qui?",
+    "draft": false
+  },
+  {
+    "program": "EMPLOYMENT INSURANCE",
+    "date": "2023-06-30",
+    "tag": "UPDATED",
+    "en_title": "EI update",
+    "en_body": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci, qui?",
+    "fr_title": "(FR) One time grant",
+    "fr_body": "(FR) Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci, qui?",
+    "draft": false
+  },
+  {
+    "program": "GUARANTEED INCOME SUPPLEMENT",
+    "date": "2023-07-05",
+    "tag": "UPDATED",
+    "en_title": "One time grant",
+    "en_body": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci, qui?",
+    "fr_title": "(FR) One time grant",
+    "fr_body": "(FR) Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci, qui?",
+    "draft": false
+  },
+  {
+    "program": "OLD AGE SECURITY",
+    "date": "2023-07-15",
+    "tag": "UPDATED",
+    "en_title": "OAS update you won't believe",
+    "en_body": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci, qui?",
+    "fr_title": "(FR) One time grant",
+    "fr_body": "(FR) Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci, qui?",
+    "draft": false
+  },
+  {
+    "program": "CANADA PENSION PLAN",
+    "date": "2023-08-01",
+    "tag": "UPDATED",
+    "en_title": "CPP update",
+    "en_body": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci, qui?",
+    "fr_title": "(FR) One time grant",
+    "fr_body": "(FR) Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci, qui?",
+    "draft": false
+  },
+  {
+    "program": "CANADA DENTAL BENEFIT",
+    "date": "2023-09-02",
+    "tag": "UPDATED",
+    "en_title": "Your dentist vist will never be the same",
+    "en_body": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci, qui?",
+    "fr_title": "(FR) One time grant",
+    "fr_body": "(FR) Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci, qui?",
+    "draft": false
+  },
+  {
+    "program": "EMPLOYMENT INSURANCE",
+    "date": "2023-09-20",
+    "tag": "UPDATED",
+    "en_title": "EI update",
+    "en_body": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci, qui?",
+    "fr_title": "(FR) One time grant",
+    "fr_body": "(FR) Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci, qui?",
+    "draft": false
+  }
+]

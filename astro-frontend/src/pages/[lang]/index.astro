@@ -1,38 +1,81 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import { useTranslations } from "../../i18n/utils";
+import data from "../../data/news_items.json";
 
 const { lang } = Astro.params;
 
 const t = useTranslations(lang);
+
+const programs = [...new Set(data.map((item) => item.program))];
 ---
 
 <Layout title={t("title")}>
-  <main class="grow bg-gray-100 px-2 pt-10 pb-5">
+  <main class="grow bg-gray-100 px-2 py-10">
     <div class="max-w-7xl mx-auto">
       <div class="flex">
+        <!-- Desktop Filter -->
         <div class="hidden sm:block pt-32 pr-6">
-          <h2 class="font-semibold text-gray-600">Filter News by Benefit</h2>
-          <form
-            class="flex flex-col items-start gap-4"
-            
-          >
-              <label
-                class="flex gap-2 text-sm font-semibold text-gray-900"
+          <h2 class="font-semibold text-gray-600 mb-2">
+            Filter News by Benefit
+          </h2>
+          <form class="flex flex-col items-start gap-4">
+            {
+              programs.map((filter) => (
+                <label class="flex gap-2 text-sm font-semibold text-gray-900">
+                  <input type="checkbox" name={filter} id={filter} />
+                  {filter}
+                </label>
+              ))
+            }
+            <div class="flex gap-2">
+              <button
+                class="font-semibold text-gray-600 outline outline-1 focus-visible:ring p-1 text-sm rounded-sm hover:text-gray-900"
               >
-                <input
-                  type="checkbox"
-                />
-                filter
-              </label>
-            <button class="font-semibold text-gray-600 outline outline-1 focus-visible:ring p-1 text-sm rounded-sm hover:text-gray-900">
-              reset
-            </button>
+                submit
+              </button>
+              <button
+                class="font-semibold text-gray-600 outline outline-1 focus-visible:ring p-1 text-sm rounded-sm hover:text-gray-900"
+              >
+                reset
+              </button>
+            </div>
           </form>
         </div>
 
         <div class="grow">
           <h1 class="text-4xl font-[500] mb-6">Benefits News Updates</h1>
+
+
+          <!-- Mobile Filter -->
+          <div class="block sm:hidden mb-5">
+            <h2 class="font-semibold text-gray-600 mb-2">
+              Filter News by Benefit
+            </h2>
+            <form class="flex flex-col items-start gap-4">
+              {
+                programs.map((filter) => (
+                  <label class="flex gap-2 text-sm font-semibold text-gray-900">
+                    <input type="checkbox" name={filter} id={filter} />
+                    {filter}
+                  </label>
+                ))
+              }
+              <div class="flex gap-2">
+                <button
+                  class="font-semibold text-gray-600 outline outline-1 focus-visible:ring p-1 text-sm rounded-sm hover:text-gray-900"
+                >
+                  submit
+                </button>
+                <button
+                  class="font-semibold text-gray-600 outline outline-1 focus-visible:ring p-1 text-sm rounded-sm hover:text-gray-900"
+                >
+                  reset
+                </button>
+              </div>
+            </form>
+          </div>
+
           <label class="sr-only">search news articles</label>
           <div class="flex mb-5">
             <input
@@ -47,23 +90,28 @@ const t = useTranslations(lang);
           </div>
 
           <div class="bg-white divide-y px-2 md:px-10 py-5 space-y-4">
-            <div class="py-4 space-y-2">
-              <div class="space-x-2">
-                <span class="text-gray-500 text-sm">
-                  <span>program</span> | <span>{new Date().toString()}</span>
-                </span>
-                <span
-                  class={`${
-                    "NEW" === "NEW" ? "bg-green-500" : "bg-orange-500"
-                  } text-white px-2 py-0.5 font-semibold text-xs inline-block`}
-                  --
-                >
-                  tag
-                </span>
-              </div>
-              <h2 class="text-2xl font-semibold">title</h2>
-              <p>body</p>
-            </div>
+            {
+              data.map((item) => (
+                <div class="py-4 space-y-2">
+                  <div class="space-x-2">
+                    <span class="text-gray-500 text-sm">
+                      <span>{item.program}</span> | <span>{item.date}</span>
+                    </span>
+                    <span
+                      class={`${
+                        item.tag === "NEW" ? "bg-green-500" : "bg-orange-500"
+                      } text-white px-2 py-0.5 font-semibold text-xs inline-block`}
+                    >
+                      {item.tag}
+                    </span>
+                  </div>
+                  <h2 class="text-2xl font-semibold">
+                    {lang === "en" ? item.en_title : item.fr_title}
+                  </h2>
+                  <p>{lang === "en" ? item.en_body : item.fr_body}</p>
+                </div>
+              ))
+            }
           </div>
         </div>
       </div>
