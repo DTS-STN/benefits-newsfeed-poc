@@ -8,6 +8,8 @@ const { lang } = Astro.params;
 const t = useTranslations(lang);
 
 const programs = [...new Set(data.map((item) => item.program))];
+
+const filters = Object.fromEntries(Astro.url.searchParams);
 ---
 
 <Layout title={t("title")}>
@@ -19,11 +21,16 @@ const programs = [...new Set(data.map((item) => item.program))];
           <h2 class="font-semibold text-gray-600 mb-2">
             Filter News by Benefit
           </h2>
-          <form class="flex flex-col items-start gap-4">
+          <form id="filtersDesktop" class="flex flex-col items-start gap-4">
             {
               programs.map((filter) => (
                 <label class="flex gap-2 text-sm font-semibold text-gray-900">
-                  <input type="checkbox" name={filter} id={filter} />
+                  <input
+                    type="checkbox"
+                    name={filter.split(" ").join("_")}
+                    id={filter + "desktop"}
+                    checked={filters[filter.split(" ").join("_")] === "on"}
+                  />
                   {filter}
                 </label>
               ))
@@ -35,6 +42,7 @@ const programs = [...new Set(data.map((item) => item.program))];
                 submit
               </button>
               <button
+                id="resetBtnDesktop"
                 class="font-semibold text-gray-600 outline outline-1 focus-visible:ring p-1 text-sm rounded-sm hover:text-gray-900"
               >
                 reset
@@ -51,11 +59,16 @@ const programs = [...new Set(data.map((item) => item.program))];
             <h2 class="font-semibold text-gray-600 mb-2">
               Filter News by Benefit
             </h2>
-            <form class="flex flex-col items-start gap-4">
+            <form id="filtersMobile" class="flex flex-col items-start gap-4">
               {
                 programs.map((filter) => (
                   <label class="flex gap-2 text-sm font-semibold text-gray-900">
-                    <input type="checkbox" name={filter} id={filter} />
+                    <input
+                      type="checkbox"
+                      name={filter}
+                      id={filter + "mobile"}
+                      checked={filters[filter] == "on"}
+                    />
                     {filter}
                   </label>
                 ))
@@ -67,6 +80,7 @@ const programs = [...new Set(data.map((item) => item.program))];
                   submit
                 </button>
                 <button
+                  id="resetBtnMobile"
                   class="font-semibold text-gray-600 outline outline-1 focus-visible:ring p-1 text-sm rounded-sm hover:text-gray-900"
                 >
                   reset
@@ -75,14 +89,36 @@ const programs = [...new Set(data.map((item) => item.program))];
             </form>
           </div>
 
-          <label class="sr-only">search news articles</label>
-          <div class="flex mb-5">
+          <!-- Desktop search (needed because of unique ID constraint on form attribute) -->
+          <div class="hidden sm:flex mb-5">
+            <label class="sr-only">search news articles</label>
             <input
+              form="filtersDesktop"
+              name="search"
               class="p-2 grow"
               type="text"
               placeholder="search by benefit name or source"
+              value={filters.search}
             />
             <button
+              form="filtersDesktop"
+              class="bg-primary text-white p-2 no-wrap hover:bg-white hover:text-primary"
+              >Search Benefit</button
+            >
+          </div>
+
+          <div class="flex mb-5 sm:hidden">
+            <label class="sr-only">search news articles</label>
+            <input
+              form="filtersMobile"
+              name="search"
+              class="p-2 grow"
+              type="text"
+              placeholder="search by benefit name or source"
+              value={filters.search}
+            />
+            <button
+              form="filtersMobile"
               class="bg-primary text-white p-2 no-wrap hover:bg-white hover:text-primary"
               >Search Benefit</button
             >
@@ -117,3 +153,24 @@ const programs = [...new Set(data.map((item) => item.program))];
     </div>
   </main>
 </Layout>
+
+<script>
+  // reset form data and resubmit to page to remove query string and fetch clean data
+  const formDesktop = document.querySelector("#filtersDesktop") as HTMLFormElement;
+  const resetBtnDesktop = document.querySelector("#resetBtnDesktop");
+  resetBtnDesktop.addEventListener("click", (e) => {
+    e.preventDefault();
+    formDesktop.reset();
+    window.location.href = window.location.origin + window.location.pathname;
+  });
+
+  const formMobile = document.querySelector(
+    "#filtersMobile"
+  ) as HTMLFormElement;
+  const resetBtnMobile = document.querySelector("#resetBtnMobile");
+  resetBtnMobile.addEventListener("click", (e) => {
+    e.preventDefault();
+    formMobile.reset();
+    window.location.href = window.location.origin + window.location.pathname;
+  });
+</script>
