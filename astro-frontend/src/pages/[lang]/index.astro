@@ -10,6 +10,25 @@ const t = useTranslations(lang);
 const programs = [...new Set(data.map((item) => item.program))];
 
 const filters = Object.fromEntries(Astro.url.searchParams);
+
+const filteredData = data.filter((item) => {
+  let haystack = `${lang === "en" ? item.en_title : item.fr_title} ${
+    lang === "en" ? item.en_body : item.fr_body
+  } ${item.program}`.toLocaleLowerCase();
+
+  let program = item.program.split(" ").join("_");
+  let keys = Object.keys(filters);
+
+  if (keys.length === 1 && "search" in filters) {
+    return haystack.includes(filters.search?.toLowerCase());
+  }
+  if (keys.length > 1 && "search" in filters) {
+    return (
+      program in filters && haystack.includes(filters.search?.toLowerCase())
+    );
+  }
+  return true;
+});
 ---
 
 <Layout title={t("title")}>
@@ -126,7 +145,7 @@ const filters = Object.fromEntries(Astro.url.searchParams);
 
           <div class="bg-white divide-y px-2 md:px-10 py-5 space-y-4">
             {
-              data.map((item) => (
+              filteredData.map((item) => (
                 <div class="py-4 space-y-2">
                   <div class="space-x-2">
                     <span class="text-gray-500 text-sm">
@@ -156,7 +175,9 @@ const filters = Object.fromEntries(Astro.url.searchParams);
 
 <script>
   // reset form data and resubmit to page to remove query string and fetch clean data
-  const formDesktop = document.querySelector("#filtersDesktop") as HTMLFormElement;
+  const formDesktop = document.querySelector(
+    "#filtersDesktop"
+  ) as HTMLFormElement;
   const resetBtnDesktop = document.querySelector("#resetBtnDesktop");
   resetBtnDesktop.addEventListener("click", (e) => {
     e.preventDefault();
