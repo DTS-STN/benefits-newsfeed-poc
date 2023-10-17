@@ -29,7 +29,7 @@ let filteredData = data.filter((item) => {
       haystack.includes(searchParams.search?.toLowerCase())
     );
   }
-  return true;
+  return !item.draft;
 });
 
 const page = +Astro.url.searchParams.get("page") ?? 0;
@@ -170,7 +170,7 @@ function createPaginatedUrl(pageNum: number) {
                     </span>
                     <span
                       class={`${
-                        item.tag === "NEW" ? "bg-green-500" : "bg-orange-500"
+                        item.tag === "NEW" ? "bg-green-700" : "bg-orange-700"
                       } text-white px-2 py-0.5 font-semibold text-xs inline-block`}
                     >
                       {item.tag}
