@@ -4,14 +4,11 @@ import { useTranslations } from "../../i18n/utils";
 import data from "../../data/news_items.json";
 
 const { lang } = Astro.params;
-
 const t = useTranslations(lang);
-
 const programs = [...new Set(data.map((item) => item.program))];
-
 const filters = Object.fromEntries(Astro.url.searchParams);
 
-const filteredData = data.filter((item) => {
+let filteredData = data.filter((item) => {
   let haystack = `${lang === "en" ? item.en_title : item.fr_title} ${
     lang === "en" ? item.en_body : item.fr_body
   } ${item.program}`.toLocaleLowerCase();
@@ -29,6 +26,21 @@ const filteredData = data.filter((item) => {
   }
   return true;
 });
+
+const page = +Astro.url.searchParams.get("page") ?? 0;
+const itemsPerPage = 3;
+const totalPages = Math.ceil(filteredData.length / itemsPerPage);
+
+filteredData = filteredData.slice(
+  page * itemsPerPage,
+  (page + 1) * itemsPerPage
+);
+
+function createPaginatedUrl(pageNum: number) {
+  let URL = Astro.url;
+  URL.searchParams.set("page", pageNum.toString());
+  return URL;
+}
 ---
 
 <Layout title={t("title")}>
@@ -84,9 +96,9 @@ const filteredData = data.filter((item) => {
                   <label class="flex gap-2 text-sm font-semibold text-gray-900">
                     <input
                       type="checkbox"
-                      name={filter}
+                      name={filter.split(" ").join("_")}
                       id={filter + "mobile"}
-                      checked={filters[filter] == "on"}
+                      checked={filters[filter.split(" ").join("_")] === "on"}
                     />
                     {filter}
                   </label>
@@ -164,6 +176,18 @@ const filteredData = data.filter((item) => {
                   </h2>
                   <p>{lang === "en" ? item.en_body : item.fr_body}</p>
                 </div>
+              ))
+            }
+          </div>
+          <div class="text-right">
+            {
+              Array.from({ length: totalPages }, (_, i) => (
+                <a
+                  href={createPaginatedUrl(i)}
+                  class="inline-block text-primary text-lg p-2 bg-slate-200 hover:bg-primary hover:text-white"
+                >
+                  {i + 1}
+                </a>
               ))
             }
           </div>
