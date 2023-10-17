@@ -6,7 +6,11 @@ import data from "../../data/news_items.json";
 const { lang } = Astro.params;
 const t = useTranslations(lang);
 const programs = [...new Set(data.map((item) => item.program))];
+const searchParams = Object.fromEntries(Astro.url.searchParams);
+
 const filters = Object.fromEntries(Astro.url.searchParams);
+delete filters["page"];
+delete filters["search"];
 
 let filteredData = data.filter((item) => {
   let haystack = `${lang === "en" ? item.en_title : item.fr_title} ${
@@ -16,12 +20,13 @@ let filteredData = data.filter((item) => {
   let program = item.program.split(" ").join("_");
   let keys = Object.keys(filters);
 
-  if (keys.length === 1 && "search" in filters) {
-    return haystack.includes(filters.search?.toLowerCase());
+  if (keys.length === 0 && "search" in searchParams) {
+    return haystack.includes(searchParams.search?.toLowerCase());
   }
-  if (keys.length > 1 && "search" in filters) {
+  if (keys.length > 0 && "search" in searchParams) {
     return (
-      program in filters && haystack.includes(filters.search?.toLowerCase())
+      program in filters &&
+      haystack.includes(searchParams.search?.toLowerCase())
     );
   }
   return true;
