@@ -55,7 +55,7 @@ function createPaginatedUrl(pageNum: number) {
         <!-- Desktop Filter -->
         <div class="hidden sm:block pt-32 pr-6">
           <h2 class="font-semibold text-gray-600 mb-2">
-            Filter News by Benefit
+            {t("heading")}
           </h2>
           <form id="filtersDesktop" class="flex flex-col items-start gap-4">
             {
@@ -75,25 +75,25 @@ function createPaginatedUrl(pageNum: number) {
               <button
                 class="font-semibold text-gray-600 outline outline-1 focus-visible:ring p-1 text-sm rounded-sm hover:text-gray-900"
               >
-                submit
+                {t('submit')}
               </button>
               <button
                 id="resetBtnDesktop"
                 class="font-semibold text-gray-600 outline outline-1 focus-visible:ring p-1 text-sm rounded-sm hover:text-gray-900"
               >
-                reset
+                {t('reset')}
               </button>
             </div>
           </form>
         </div>
 
         <div class="grow">
-          <h1 class="text-4xl font-[500] mb-6">Benefits News Updates</h1>
+          <h1 class="text-4xl font-[500] mb-6">{t('heading')}</h1>
 
           <!-- Mobile Filter -->
           <div class="block sm:hidden mb-5">
             <h2 class="font-semibold text-gray-600 mb-2">
-              Filter News by Benefit
+              {t('filter.heading')}
             </h2>
             <form id="filtersMobile" class="flex flex-col items-start gap-4">
               {
@@ -113,13 +113,13 @@ function createPaginatedUrl(pageNum: number) {
                 <button
                   class="font-semibold text-gray-600 outline outline-1 focus-visible:ring p-1 text-sm rounded-sm hover:text-gray-900"
                 >
-                  submit
+                  {t('submit')}
                 </button>
                 <button
                   id="resetBtnMobile"
                   class="font-semibold text-gray-600 outline outline-1 focus-visible:ring p-1 text-sm rounded-sm hover:text-gray-900"
                 >
-                  reset
+                  {t('reset')}
                 </button>
               </div>
             </form>
@@ -127,27 +127,28 @@ function createPaginatedUrl(pageNum: number) {
 
           <!-- Desktop search (needed because of unique ID constraint on form attribute) -->
           <div class="hidden sm:flex mb-5">
-            <label class="sr-only">search news articles</label>
+            <label class="sr-only" for="searchDesktop">{t('search.heading')}</label>
             <input
               form="filtersDesktop"
               name="search"
+              id="searchDesktop"
               class="p-2 grow"
               type="text"
-              placeholder="search by benefit name or source"
+              placeholder={t("search.placeholder")}
               value={filters.search}
             />
             <button
               form="filtersDesktop"
               class="bg-primary text-white p-2 no-wrap hover:bg-white hover:text-primary"
-              >Search Benefit</button
+              >{t("search.button")}</button
             >
           </div>
 
           <div class="flex mb-5 sm:hidden">
-            <label class="sr-only">search news articles</label>
+            <label class="sr-only" for="searchMobile">{t("search.heading")}</label>
             <input
               form="filtersMobile"
-              name="search"
+              name="searchMobile"
               class="p-2 grow"
               type="text"
               placeholder="search by benefit name or source"
@@ -156,7 +157,7 @@ function createPaginatedUrl(pageNum: number) {
             <button
               form="filtersMobile"
               class="bg-primary text-white p-2 no-wrap hover:bg-white hover:text-primary"
-              >Search Benefit</button
+              >{t("search.button")}</button
             >
           </div>
 

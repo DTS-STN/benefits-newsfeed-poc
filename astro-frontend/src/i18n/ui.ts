@@ -1,6 +1,15 @@
 export const ui = {
   en: {
     title: "Benefits Newsfeed",
+    heading: "Benefits News Updates",
+    submit: "submit",
+    reset: "reset",
+
+    "filter.heading": "Filter News by Benefit",
+
+    "search.heading": "search news articles",
+    "search.placeholder": "search by benefit name or source",
+    "search.button": "Search Benefit",
 
     "footer.goc": "Government of Canada",
     "footer.contact": "Contact us",
@@ -18,6 +27,15 @@ export const ui = {
   },
   fr: {
     title: "(FR) Benefits Newsfeed",
+    heading: "(FR) Benefits News Updates",
+    submit: "(FR) submit",
+    reset: "(FR) reset",
+
+    "filter.heading": "(FR) Filter News by Benefit",
+
+    "search.heading": "(FR) search news articles",
+    "search.placeholder": "(FR) search by benefit name or source",
+    "search.button": "(FR) Search Benefit",
 
     "footer.goc": "(FR) Government of Canada",
     "footer.contact": "(FR) Contact us",
