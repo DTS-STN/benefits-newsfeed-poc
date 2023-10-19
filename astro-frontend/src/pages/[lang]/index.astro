@@ -41,7 +41,7 @@ filteredData = filteredData.slice(
   (page + 1) * itemsPerPage
 );
 
-function createPaginatedUrl(pageNum: number) {
+export function createPaginatedUrl(pageNum: number) {
   let URL = Astro.url;
   URL.searchParams.set("page", pageNum.toString());
   return URL;
