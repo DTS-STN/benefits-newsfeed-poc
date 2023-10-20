@@ -41,7 +41,7 @@ filteredData = filteredData.slice(
   (page + 1) * itemsPerPage
 );
 
-export function createPaginatedUrl(pageNum: number) {
+function createPaginatedUrl(pageNum: number) {
   let URL = Astro.url;
   URL.searchParams.set("page", pageNum.toString());
   return URL;
@@ -75,25 +75,25 @@ export function createPaginatedUrl(pageNum: number) {
               <button
                 class="font-semibold text-gray-600 outline outline-1 focus-visible:ring p-1 text-sm rounded-sm hover:text-gray-900"
               >
-                {t('submit')}
+                {t("submit")}
               </button>
               <button
                 id="resetBtnDesktop"
                 class="font-semibold text-gray-600 outline outline-1 focus-visible:ring p-1 text-sm rounded-sm hover:text-gray-900"
               >
-                {t('reset')}
+                {t("reset")}
               </button>
             </div>
           </form>
         </div>
 
         <div class="grow">
-          <h1 class="text-4xl font-[500] mb-6">{t('heading')}</h1>
+          <h1 class="text-4xl font-[500] mb-6">{t("heading")}</h1>
 
           <!-- Mobile Filter -->
           <div class="block sm:hidden mb-5">
             <h2 class="font-semibold text-gray-600 mb-2">
-              {t('filter.heading')}
+              {t("filter.heading")}
             </h2>
             <form id="filtersMobile" class="flex flex-col items-start gap-4">
               {
@@ -113,13 +113,13 @@ export function createPaginatedUrl(pageNum: number) {
                 <button
                   class="font-semibold text-gray-600 outline outline-1 focus-visible:ring p-1 text-sm rounded-sm hover:text-gray-900"
                 >
-                  {t('submit')}
+                  {t("submit")}
                 </button>
                 <button
                   id="resetBtnMobile"
                   class="font-semibold text-gray-600 outline outline-1 focus-visible:ring p-1 text-sm rounded-sm hover:text-gray-900"
                 >
-                  {t('reset')}
+                  {t("reset")}
                 </button>
               </div>
             </form>
@@ -127,7 +127,9 @@ export function createPaginatedUrl(pageNum: number) {
 
           <!-- Desktop search (needed because of unique ID constraint on form attribute) -->
           <div class="hidden sm:flex mb-5">
-            <label class="sr-only" for="searchDesktop">{t('search.heading')}</label>
+            <label class="sr-only" for="searchDesktop"
+              >{t("search.heading")}</label
+            >
             <input
               form="filtersDesktop"
               name="search"
@@ -145,7 +147,9 @@ export function createPaginatedUrl(pageNum: number) {
           </div>
 
           <div class="flex mb-5 sm:hidden">
-            <label class="sr-only" for="searchMobile">{t("search.heading")}</label>
+            <label class="sr-only" for="searchMobile"
+              >{t("search.heading")}</label
+            >
             <input
               form="filtersMobile"
               name="searchMobile"
