@@ -1,0 +1,20 @@
+---
+const { item } = Astro.props;
+const { Content } = await item.render();
+---
+
+<div class="py-4 space-y-2 prose max-w-none">
+  <div class="space-x-2">
+    <span class="text-gray-500 text-sm">
+      <span>{item.data.program}</span> | <span>{item.data.date}</span>
+    </span>
+    <span
+      class={`${
+        item.data.tag === "NEW" ? "bg-green-700" : "bg-orange-700"
+      } text-white px-2 py-0.5 font-semibold text-xs inline-block`}
+    >
+      {item.data.tag}
+    </span>
+  </div>
+  <Content />
+</div>
