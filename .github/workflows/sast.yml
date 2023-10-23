@@ -70,3 +70,61 @@ jobs:
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v2
+
+
+
+    unit:
+      name: Vitest Unit Test
+        runs-on: ubuntu-latest
+        steps:
+          - name: Checkout 🔔
+            uses: actions/checkout@v3
+
+          - name: Setup Node
+            uses: actions/setup-node@v3
+            with:
+              node-version: 18.x
+
+          - name: Install
+            run: npm install
+            env:
+              CI: true
+
+          - name: Unit Tests 🧪
+            run: npm run test:unit
+            env:
+              CI: true
+
+
+  e2e:
+    name: Cypress E2E Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🔔
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+
+      - name: Install
+        run: npm install
+        env:
+          CI: true
+
+      - name: Build
+        run: npm run build
+        env:
+          CI: true
+
+      - name: Cypress end-to-end 🧪
+        uses: cypress-io/github-action@v4
+        env:
+          CI: true
+        with:
+          install: false
+          start: npm run start
+
+      - name: Run e2e tests
+      run: npm run test:e2e
