@@ -13,6 +13,7 @@ tag: "NEW"
 - Agence du revenu du Canada - Mon dossier
 - Agence du revenu du Canada - Mon dossier d'entreprise
 - compte du Centre de service national de prêts aux étudiants
-- RE Web \n - Services en ligne des subventions et contributions (SELSC)
+- RE Web
+- Services en ligne des subventions et contributions (SELSC)
 
 Nous prévoyons que Caisse Alliance reviendra en tant que partenaire de connexion au début de 2024. En attendant, vous pouvez utiliser un autre partenaire de connexion ou une autre méthode de connexion pour vos transactions.
