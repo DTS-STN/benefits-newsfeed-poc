@@ -1,5 +1,5 @@
 ---
-program: "SERVICE DISRUPTIONS"
+program: "INTERRUPTIONS DE SERVICE"
 date: "2023-08-18"
 tag: "NEW"
 "draft": false
