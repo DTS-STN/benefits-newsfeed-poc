@@ -1,5 +1,9 @@
 export const ui = {
   en: {
+    "banner.test-site": "Test Site",
+    "banner.test-site-text":
+      "You cannot apply for services or benefits through this test site. Parts of this site may not work and will change.",
+
     title: "Benefits Newsfeed",
     heading: "Benefits News Updates",
     submit: "submit",
@@ -26,6 +30,10 @@ export const ui = {
     "footer.privacy": "Privacy",
   },
   fr: {
+    "banner.test-site": "Lieu de test",
+    "banner.test-site-text":
+      "Vous ne pouvez pas demander de services ou de prestations par l'intermédiaire de ce site d'essai. Certaines parties du site pourraient ne pas fonctionner et seront modifiées.",
+
     title: "(FR) Benefits Newsfeed",
     heading: "(FR) Benefits News Updates",
     submit: "(FR) submit",
