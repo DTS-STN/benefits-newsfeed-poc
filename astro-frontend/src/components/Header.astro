@@ -3,6 +3,13 @@ import { useTranslations } from "../i18n/utils";
 
 const { lang } = Astro.props;
 const t = useTranslations(lang);
+
+// todo: create adapter for french/english filter mappings
+function toggleUrl(){
+  let url = new URL (Astro.url)
+  url.pathname = lang==='en' ? 'fr' : 'en'
+  return url
+}
 ---
 
 <header>
@@ -14,7 +21,7 @@ const t = useTranslations(lang);
         alt="Government of Canada"
         property="logo"
       />
-      <a href=`/${lang==='en' ? 'fr' : 'en'}`
+      <a href=`${toggleUrl()}`
         >{lang === "en" ? "Français" : "English"}</a
       >
     </div>
