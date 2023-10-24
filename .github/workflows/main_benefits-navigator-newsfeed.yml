@@ -34,10 +34,10 @@ jobs:
     - name: Build and push container image to registry
       uses: docker/build-push-action@v3
       with:
-        working-directory: ./astro-frontend
         push: true
         tags: crdtsshared.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_86a88f5f1a73439da125d273abde6626 }}/astro-frontend:${{ github.sha }}
-        file: ./Dockerfile
+        file: ./astro-frontend/Dockerfile
+        context: './astro-frontend'
 
   deploy:
     runs-on: ubuntu-latest
