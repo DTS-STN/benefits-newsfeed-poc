@@ -9,7 +9,6 @@ on:
       - 'astro-frontend/**'
     branches:
       - main
-  workflow_dispatch:
 
 defaults:
   run:
