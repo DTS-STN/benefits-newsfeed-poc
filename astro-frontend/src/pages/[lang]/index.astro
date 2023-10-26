@@ -18,7 +18,6 @@ delete filters["search"];
 
 let filteredData = newsItems.filter((item) => {
   let haystack = `${item.body} ${item.data.program}`.toLocaleLowerCase();
-  let program = item.data.program.split(" ").join("_");
   let keys = Object.keys(filters);
 
   if (keys.length === 0 && "search" in searchParams) {
@@ -26,7 +25,7 @@ let filteredData = newsItems.filter((item) => {
   }
   if (keys.length > 0 && "search" in searchParams) {
     return (
-      program in filters &&
+      isChecked(item.data.program) &&
       haystack.includes(searchParams.search?.toLowerCase())
     );
   }
@@ -47,6 +46,11 @@ function createPaginatedUrl(pageNum: number) {
   url.searchParams.set("page", pageNum.toString());
   return url;
 }
+
+function isChecked(program: string) {
+  let idx = programs.indexOf(program);
+  return `cb${idx}` in filters;
+}
 ---
 
 <Layout title={t("title")}>
@@ -64,9 +68,10 @@ function createPaginatedUrl(pageNum: number) {
                 <label class="flex gap-2 text-sm font-semibold text-gray-900">
                   <input
                     type="checkbox"
-                    name={filter.split(" ").join("_")}
                     id={filter + "desktop"}
-                    checked={filters[filter.split(" ").join("_")] === "on"}
+                    name={`cb${programs.indexOf(filter)}`}
+                    checked={isChecked(filter)}
+                    value={1}
                   />
                   {filter}
                 </label>
@@ -102,9 +107,10 @@ function createPaginatedUrl(pageNum: number) {
                   <label class="flex gap-2 text-sm font-semibold text-gray-900">
                     <input
                       type="checkbox"
-                      name={filter.split(" ").join("_")}
                       id={filter + "mobile"}
-                      checked={filters[filter.split(" ").join("_")] === "on"}
+                      name={`cb${programs.indexOf(filter)}`}
+                      checked={isChecked(filter)}
+                      value={1}
                     />
                     {filter}
                   </label>
@@ -138,11 +144,11 @@ function createPaginatedUrl(pageNum: number) {
               class="p-2 grow"
               type="text"
               placeholder={t("search.placeholder")}
-              value={filters.search}
+              value={searchParams.search ?? ""}
             />
             <button
               form="filtersDesktop"
-              class="bg-primary text-white p-2 no-wrap hover:bg-white hover:text-primary"
+              class="bg-primary text-white p-2 no-wrap hover:bg-blue-950"
               >{t("search.button")}</button
             >
           </div>
@@ -153,15 +159,16 @@ function createPaginatedUrl(pageNum: number) {
             >
             <input
               form="filtersMobile"
-              name="searchMobile"
+              id="searchMobile"
+              name="search"
               class="p-2 grow"
               type="text"
               placeholder="search by benefit name or source"
-              value={filters.search}
+              value={searchParams.search ?? ""}
             />
             <button
               form="filtersMobile"
-              class="bg-primary text-white p-2 no-wrap hover:bg-white hover:text-primary"
+              class="bg-primary text-white p-2 no-wrap hover:bg-blue-950"
               >{t("search.button")}</button
             >
           </div>
