@@ -45,7 +45,7 @@ it("can reset the filters after filtering results", () => {
     .url()
     .should(
       "equal",
-      Cypress.config().baseUrl + "/en?OLD_AGE_SECURITY=on&search=EI"
+      Cypress.config().baseUrl + "/en?cb1=1&search=EI"
     );
   page.get("button").contains("reset").click();
   page.url().should("equal", Cypress.config().baseUrl + "/en");
