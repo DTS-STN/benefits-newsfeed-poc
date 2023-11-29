@@ -56,19 +56,22 @@ function isChecked(program: string) {
 <Layout title={t("title")}>
   <main class="grow bg-gray-100 px-2 py-10">
     <div class="max-w-7xl mx-auto">
-      <div class="flex">
-        <!-- Desktop Filter -->
-        <div class="hidden sm:block pt-32 pr-6 min-w-max">
+      <div class="border-b border-b-[#AF3C43] mb-6">
+        <h1 class="text-4xl font-bold pb-2">{t("heading")}</h1>
+      </div>
+
+      <div class="flex flex-col flex-col-reverse md:flex-row md:justify-between">
+        <div class="block mb-5">
           <h2 class="font-semibold text-gray-600 mb-2">
-            {t("heading")}
+            {t("filter.heading")}
           </h2>
-          <form id="filtersDesktop" class="flex flex-col items-start gap-4">
+          <form id="filters" class="flex flex-col items-start gap-4">
             {
               programs.map((filter) => (
                 <label class="flex gap-2 text-sm font-semibold text-gray-900">
                   <input
                     type="checkbox"
-                    id={filter + "desktop"}
+                    id={filter}
                     name={`cb${programs.indexOf(filter)}`}
                     checked={isChecked(filter)}
                     value={1}
@@ -84,7 +87,7 @@ function isChecked(program: string) {
                 {t("submit")}
               </button>
               <button
-                id="resetBtnDesktop"
+                id="resetBtn"
                 class="font-semibold text-gray-600 outline outline-1 focus-visible:ring p-1 text-sm rounded-sm hover:text-gray-900"
               >
                 {t("reset")}
@@ -93,76 +96,12 @@ function isChecked(program: string) {
           </form>
         </div>
 
-        <div class="grow">
-          <div class="border-b border-b-[#AF3C43] mb-6">
-            <h1 class="text-4xl font-bold pb-2">{t("heading")}</h1>
-
-          </div>
-
-          <!-- Mobile Filter -->
-          <div class="block sm:hidden mb-5">
-            <h2 class="font-semibold text-gray-600 mb-2">
-              {t("filter.heading")}
-            </h2>
-            <form id="filtersMobile" class="flex flex-col items-start gap-4">
-              {
-                programs.map((filter) => (
-                  <label class="flex gap-2 text-sm font-semibold text-gray-900">
-                    <input
-                      type="checkbox"
-                      id={filter + "mobile"}
-                      name={`cb${programs.indexOf(filter)}`}
-                      checked={isChecked(filter)}
-                      value={1}
-                    />
-                    {filter}
-                  </label>
-                ))
-              }
-              <div class="flex gap-2">
-                <button
-                  class="font-semibold text-gray-600 outline outline-1 focus-visible:ring p-1 text-sm rounded-sm hover:text-gray-900"
-                >
-                  {t("submit")}
-                </button>
-                <button
-                  id="resetBtnMobile"
-                  class="font-semibold text-gray-600 outline outline-1 focus-visible:ring p-1 text-sm rounded-sm hover:text-gray-900"
-                >
-                  {t("reset")}
-                </button>
-              </div>
-            </form>
-          </div>
-
-          <!-- Desktop search (needed because of unique ID constraint on form attribute) -->
-          <div class="hidden sm:flex mb-5">
-            <label class="sr-only" for="searchDesktop"
-              >{t("search.heading")}</label
-            >
+        <div class="grow md:max-w-[600px]">
+          <div class="flex mb-5">
+            <label class="sr-only" for="search">{t("search.heading")}</label>
             <input
-              form="filtersDesktop"
-              name="search"
-              id="searchDesktop"
-              class="p-2 grow"
-              type="text"
-              placeholder={t("search.placeholder")}
-              value={searchParams.search ?? ""}
-            />
-            <button
-              form="filtersDesktop"
-              class="bg-[#2572B4] text-white p-2 no-wrap hover:bg-blue-950"
-              >{t("search.button")}</button
-            >
-          </div>
-
-          <div class="flex mb-5 sm:hidden">
-            <label class="sr-only" for="searchMobile"
-              >{t("search.heading")}</label
-            >
-            <input
-              form="filtersMobile"
-              id="searchMobile"
+              form="filters"
+              id="search"
               name="search"
               class="p-2 grow"
               type="text"
@@ -170,28 +109,29 @@ function isChecked(program: string) {
               value={searchParams.search ?? ""}
             />
             <button
-              form="filtersMobile"
+              form="filters"
               class="bg-[#2572B4] text-white p-2 no-wrap hover:bg-blue-950"
               >{t("search.button")}</button
             >
           </div>
-
-          <div class="bg-white divide-y px-2 md:px-10 py-5 space-y-4">
-            {filteredData.map((item) => <NewsItem item={item} />)}
-          </div>
-          <div class="text-center">
-            {
-              Array.from({ length: totalPages }, (_, i) => (
-                <a
-                  href={createPaginatedUrl(i)}
-                  class="inline-block text-primary text-lg p-2 bg-slate-200 hover:bg-primary hover:text-white"
-                >
-                  {i + 1}
-                </a>
-              ))
-            }
-          </div>
         </div>
+      </div>
+
+      <div class="bg-white divide-y px-2 md:px-10 py-5 space-y-4">
+        {filteredData.map((item) => <NewsItem item={item} />)}
+      </div>
+
+      <div class="text-center">
+        {
+          Array.from({ length: totalPages }, (_, i) => (
+            <a
+              href={createPaginatedUrl(i)}
+              class="inline-block text-primary text-lg p-2 bg-slate-200 hover:bg-primary hover:text-white"
+            >
+              {i + 1}
+            </a>
+          ))
+        }
       </div>
     </div>
   </main>
@@ -199,23 +139,11 @@ function isChecked(program: string) {
 
 <script>
   // reset form data and resubmit to page to remove query string and fetch clean data
-  const formDesktop = document.querySelector(
-    "#filtersDesktop"
-  ) as HTMLFormElement;
-  const resetBtnDesktop = document.querySelector("#resetBtnDesktop");
-  resetBtnDesktop.addEventListener("click", (e) => {
+  const form = document.querySelector("#filters") as HTMLFormElement;
+  const resetBtn = document.querySelector("#resetBtn");
+  resetBtn.addEventListener("click", (e) => {
     e.preventDefault();
-    formDesktop.reset();
-    window.location.href = window.location.origin + window.location.pathname;
-  });
-
-  const formMobile = document.querySelector(
-    "#filtersMobile"
-  ) as HTMLFormElement;
-  const resetBtnMobile = document.querySelector("#resetBtnMobile");
-  resetBtnMobile.addEventListener("click", (e) => {
-    e.preventDefault();
-    formMobile.reset();
+    form.reset();
     window.location.href = window.location.origin + window.location.pathname;
   });
 </script>
