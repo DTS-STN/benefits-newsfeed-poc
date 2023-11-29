@@ -9,6 +9,10 @@ html {
     font-family: lato;
 }
 
+details > summary {
+  list-style: none;
+}
+
 @layer base {
     /* Font families */
     h1,

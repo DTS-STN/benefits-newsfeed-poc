@@ -17,13 +17,14 @@ it("can toggle language to french", () => {
 it("can filter news items by search input", () => {
   const page = cy.visit("/en");
   page.get("#search").type("old age");
-  page.get("button").contains("submit").click();
+  page.get("button").contains(/search/i).click();
   const titles = page.get("span").contains("old age");
   page.should("not.be.empty", titles);
 });
 
 it("can filter news items by checkbox input", () => {
   const page = cy.visit("/en");
+  page.get("summary").click();
   page.get("label").contains("OLD AGE SECURITY").click();
   page.get("button").contains("submit").click();
   const titles = page.get("span").contains("old age");
@@ -38,15 +39,12 @@ it("can navigate with paginated urls", () => {
 
 it("can reset the filters after filtering results", () => {
   const page = cy.visit("/en");
+  page.get("summary").click();
   page.get("label").contains("OLD AGE SECURITY").click();
   page.get("#search").type("EI");
-  page.get("button").contains("submit").click();
-  page
-    .url()
-    .should(
-      "equal",
-      Cypress.config().baseUrl + "/en?cb1=1&search=EI"
-    );
-  page.get("button").contains("reset").click();
+  page.get("button").contains(/submit/i).click();
+  page.url().should("equal", Cypress.config().baseUrl + "/en?cb1=1&search=EI");
+  page.get("summary").click();
+  page.get("#resetBtn").click();
   page.url().should("equal", Cypress.config().baseUrl + "/en");
 });
