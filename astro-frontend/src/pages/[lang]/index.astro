@@ -94,7 +94,10 @@ function isChecked(program: string) {
         </div>
 
         <div class="grow">
-          <h1 class="text-4xl font-[500] mb-6">{t("heading")}</h1>
+          <div class="border-b border-b-[#AF3C43] mb-6">
+            <h1 class="text-4xl font-bold pb-2">{t("heading")}</h1>
+
+          </div>
 
           <!-- Mobile Filter -->
           <div class="block sm:hidden mb-5">
@@ -148,7 +151,7 @@ function isChecked(program: string) {
             />
             <button
               form="filtersDesktop"
-              class="bg-primary text-white p-2 no-wrap hover:bg-blue-950"
+              class="bg-[#2572B4] text-white p-2 no-wrap hover:bg-blue-950"
               >{t("search.button")}</button
             >
           </div>
@@ -168,7 +171,7 @@ function isChecked(program: string) {
             />
             <button
               form="filtersMobile"
-              class="bg-primary text-white p-2 no-wrap hover:bg-blue-950"
+              class="bg-[#2572B4] text-white p-2 no-wrap hover:bg-blue-950"
               >{t("search.button")}</button
             >
           </div>
@@ -176,7 +179,7 @@ function isChecked(program: string) {
           <div class="bg-white divide-y px-2 md:px-10 py-5 space-y-4">
             {filteredData.map((item) => <NewsItem item={item} />)}
           </div>
-          <div class="text-right">
+          <div class="text-center">
             {
               Array.from({ length: totalPages }, (_, i) => (
                 <a
