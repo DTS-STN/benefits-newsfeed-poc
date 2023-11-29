@@ -16,7 +16,7 @@ it("can toggle language to french", () => {
 
 it("can filter news items by search input", () => {
   const page = cy.visit("/en");
-  page.get("#searchDesktop").type("old age");
+  page.get("#search").type("old age");
   page.get("button").contains("submit").click();
   const titles = page.get("span").contains("old age");
   page.should("not.be.empty", titles);
@@ -39,7 +39,7 @@ it("can navigate with paginated urls", () => {
 it("can reset the filters after filtering results", () => {
   const page = cy.visit("/en");
   page.get("label").contains("OLD AGE SECURITY").click();
-  page.get("#searchDesktop").type("EI");
+  page.get("#search").type("EI");
   page.get("button").contains("submit").click();
   page
     .url()
