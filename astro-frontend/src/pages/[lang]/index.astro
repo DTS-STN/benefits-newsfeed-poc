@@ -54,21 +54,19 @@ function isChecked(program: string) {
 ---
 
 <Layout title={t("title")}>
-  <main class="grow bg-gray-100 px-2 py-10">
+  <main class="grow px-2 py-10">
     <div class="max-w-7xl mx-auto">
       <div class="border-b border-b-[#AF3C43] mb-6">
         <h1 class="text-4xl font-bold pb-2">{t("heading")}</h1>
       </div>
 
-      <div class="flex flex-col-reverse md:flex-row md:justify-between gap-5">
-        <div class="mb-5">
-          <h2 class="font-semibold mb-2 text-lg">
-            {t("filter.heading")}
-          </h2>
-          <details class="min-w-[400px] bg-white">
-            <summary class="flex items-center justify-between border p-2 mb-2">
-              <span class="text-lg">Select benefit type</span>
-
+      <div
+        class="flex flex-col md:flex-row md:justify-between gap-5 mb-5 h-full"
+      >
+        <div class="relative md:min-w-[400px]">
+          <details class="w-full md:min-w-[400px] bg-white md:absolute border">
+            <summary class="flex items-center justify-between p-2">
+              <span class="text-lg text-[#6F6F6F]">{t("filter.summary")}</span>
               <svg
                 width="16"
                 height="11"
@@ -81,7 +79,10 @@ function isChecked(program: string) {
                   fill="#666666"></path>
               </svg>
             </summary>
-            <form id="filters" class="flex flex-col items-start gap-4 p-2">
+            <form
+              id="filters"
+              class="flex flex-col items-start gap-4 p-2 border-t"
+            >
               {
                 programs.map((filter) => (
                   <label class="flex gap-2 text-sm font-semibold text-gray-900">
@@ -98,15 +99,15 @@ function isChecked(program: string) {
               }
               <div class="flex gap-2 mx-auto">
                 <button
-                  class="font-semibold text-gray-600 outline outline-1 focus-visible:ring p-1 text-sm rounded-sm hover:text-gray-900"
-                >
-                  {t("submit")}
-                </button>
-                <button
                   id="resetBtn"
                   class="font-semibold text-gray-600 outline outline-1 focus-visible:ring p-1 text-sm rounded-sm hover:text-gray-900"
                 >
                   {t("reset")}
+                </button>
+                <button
+                  class="font-semibold bg-primary text-white outline outline-1 focus-visible:ring p-1 text-sm rounded-sm hover:text-gray-100"
+                >
+                  {t("submit")}
                 </button>
               </div>
             </form>
@@ -120,7 +121,7 @@ function isChecked(program: string) {
               form="filters"
               id="search"
               name="search"
-              class="p-2 grow text-lg"
+              class="p-2 grow text-lg border text-[#6F6F6F]"
               type="text"
               placeholder="search by benefit name or source"
               value={searchParams.search ?? ""}
@@ -134,7 +135,7 @@ function isChecked(program: string) {
         </div>
       </div>
 
-      <div class="bg-white divide-y px-2 md:px-10 py-5 space-y-4">
+      <div class="bg-white divide-y px-2 space-y-4 border-t">
         {filteredData.map((item) => <NewsItem item={item} />)}
       </div>
 
@@ -152,6 +153,30 @@ function isChecked(program: string) {
       </div>
     </div>
   </main>
+
+  <div class="bg-[#EBF2FC] px-2">
+    <div class="max-w-7xl mx-auto py-5 flex gap-5">
+      <img src="/text-bubble.png" class="hidden md:block" alt="" />
+      <div class="flex flex-col justify-between">
+        <h2 class="text-2xl md:text-4xl">
+          {t("wip.title")}
+        </h2>
+        <p class="md:text-[20px] font-[400]">
+          {t("wip.p")}
+        </p>
+        <button
+          class="bg-primary text-white p-2 rounded hover:bg-slate-950 max-w-fit"
+          >{t("wip.survey")}</button
+        >
+      </div>
+    </div>
+  </div>
+
+  <div class="py-10 px-2">
+    <div class="max-w-7xl mx-auto">
+      <p>{t("date-modified")}</p>
+    </div>
+  </div>
 </Layout>
 
 <script>
