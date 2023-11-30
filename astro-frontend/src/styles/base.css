@@ -32,7 +32,4 @@ details > summary {
     button {
       @apply font-body;
     }
-    a {
-      @apply underline text-primary;
-    }
   }
