@@ -99,15 +99,15 @@ function isChecked(program: string) {
               }
               <div class="flex gap-2 mx-auto">
                 <button
+                  class="font-semibold bg-primary text-white outline outline-1 focus-visible:ring p-1 text-sm rounded-sm hover:text-gray-100"
+                >
+                  {t("submit")}
+                </button>
+                <button
                   id="resetBtn"
                   class="font-semibold text-gray-600 outline outline-1 focus-visible:ring p-1 text-sm rounded-sm hover:text-gray-900"
                 >
                   {t("reset")}
-                </button>
-                <button
-                  class="font-semibold bg-primary text-white outline outline-1 focus-visible:ring p-1 text-sm rounded-sm hover:text-gray-100"
-                >
-                  {t("submit")}
                 </button>
               </div>
             </form>
@@ -121,8 +121,8 @@ function isChecked(program: string) {
               form="filters"
               id="search"
               name="search"
-              class="p-2 grow text-lg border text-[#6F6F6F]"
               type="text"
+              class="p-2 grow text-lg border text-[#6F6F6F]"
               placeholder="search by benefit name or source"
               value={searchParams.search ?? ""}
             />
@@ -135,7 +135,7 @@ function isChecked(program: string) {
         </div>
       </div>
 
-      <div class="bg-white divide-y px-2 space-y-4 border-t">
+      <div class="bg-white divide-y px-2 space-y-4 border-t mb-10">
         {filteredData.map((item) => <NewsItem item={item} />)}
       </div>
 
@@ -144,7 +144,7 @@ function isChecked(program: string) {
           Array.from({ length: totalPages }, (_, i) => (
             <a
               href={createPaginatedUrl(i)}
-              class="inline-block text-primary text-lg p-2 bg-slate-200 hover:bg-primary hover:text-white"
+              class="inline-block text-[#335075] text-[20px] py-[10px] px-[16px] bg-[#DCDEE1] hover:bg-[#335075] hover:text-[#DCDEE1] no-underline border"
             >
               {i + 1}
             </a>
