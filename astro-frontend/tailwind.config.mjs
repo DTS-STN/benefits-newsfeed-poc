@@ -9,7 +9,7 @@ export default {
     },
     extend: {
       colors: {
-        primary: "rgb(38, 55, 74)",
+        primary: "#26374A",
       },
     },
   },

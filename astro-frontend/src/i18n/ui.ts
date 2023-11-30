@@ -10,10 +10,17 @@ export const ui = {
     reset: "reset",
 
     "filter.heading": "Filter News by Benefit",
+    "filter.summary": "Select benefit type",
 
     "search.heading": "search news articles",
     "search.placeholder": "search by benefit name or source",
     "search.button": "Search Benefit",
+
+    "wip.title": "This newsfeed is a work in progress",
+    "wip.p": "You can help improve it by giving your feedback ",
+    "wip.survey": "Take survey",
+
+    "date-modified": "Date modified: 2023-11-30",
 
     "footer.goc": "Government of Canada",
     "footer.contact": "Contact us",
@@ -40,10 +47,17 @@ export const ui = {
     reset: "(FR) reset",
 
     "filter.heading": "(FR) Filter News by Benefit",
+    "filter.summary": "(FR) Select benefit type",
 
     "search.heading": "(FR) search news articles",
     "search.placeholder": "(FR) search by benefit name or source",
     "search.button": "(FR) Search Benefit",
+
+    "wip.title": "(FR) This newsfeed is a work in progress",
+    "wip.p": "(FR) You can help improve it by giving your feedback ",
+    "wip.survey": "(FR) Take survey",
+
+    "date-modified": "(FR) Date modified: 2023-11-30",
 
     "footer.goc": "(FR) Government of Canada",
     "footer.contact": "(FR) Contact us",
