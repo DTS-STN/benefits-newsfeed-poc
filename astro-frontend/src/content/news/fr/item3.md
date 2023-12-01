@@ -1,7 +1,7 @@
 ---
 program: "PRESTATION DENTAIRE CANADIENNE"
 date: "2023-06-22"
-tag: "NEW"
+tag: "NOUVEAU"
 "draft": false
 ---
 

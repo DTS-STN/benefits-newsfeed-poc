@@ -57,7 +57,7 @@ function isChecked(program: string) {
   <main class="grow px-2 py-10">
     <div class="max-w-7xl mx-auto">
       <div class="border-b border-b-[#AF3C43] mb-6">
-        <h1 class="text-4xl font-bold pb-2">{t("heading")}</h1>
+        <h1 class="text-4xl font-bold pb-2">{t("title")}</h1>
       </div>
 
       <div
@@ -122,8 +122,8 @@ function isChecked(program: string) {
               id="search"
               name="search"
               type="text"
-              class="p-2 grow text-lg border text-[#6F6F6F]"
-              placeholder="search by benefit name or source"
+              class="p-2 grow text-lg border"
+              placeholder={t('search.placeholder')}
               value={searchParams.search ?? ""}
             />
             <button

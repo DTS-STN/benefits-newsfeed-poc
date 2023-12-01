@@ -5,7 +5,7 @@ it("loads home page in english", () => {
 
 it("loads home page in french", () => {
   const page = cy.visit("/fr");
-  page.get("title").should("have.text", "(FR) Benefits Newsfeed");
+  page.get("title").should("have.text", "Flux d'informations sur les avantages");
 });
 
 it("can toggle language to french", () => {
@@ -26,7 +26,7 @@ it("can filter news items by checkbox input", () => {
   const page = cy.visit("/en");
   page.get("summary").click();
   page.get("label").contains("OLD AGE SECURITY").click();
-  page.get("button").contains("submit").click();
+  page.get("button").contains(/submit/i).click();
   const titles = page.get("span").contains("old age");
   page.should("not.be.empty", titles);
 });

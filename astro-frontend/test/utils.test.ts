@@ -9,7 +9,7 @@ test("english translations work", () => {
 
 test("french translations work", () => {
   const t = useTranslations("fr");
-  expect(t("title")).toBe("(FR) Benefits Newsfeed");
+  expect(t("title")).toBe("Flux d'informations sur les avantages");
 });
 
 test("ui has english and french keys", () => {

@@ -1,7 +1,7 @@
 ---
 program: "SUPPLÉMENT DE REVENU GARANTI"
 date: "2023-07-05"
-tag: "UPDATED"
+tag: "MISE À JOUR"
 "draft": false
 ---
 
