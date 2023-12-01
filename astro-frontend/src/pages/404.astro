@@ -1,0 +1,50 @@
+---
+import "../styles/base.css";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="benefit navgiator newsfeed" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Not Found | Non Trouvé</title>
+  </head>
+  <body class="my-10 mx-10 md:mx-20">
+    <img
+      src="/goc.svg"
+      alt="Government of Canada / Gouvernement du Canada"
+      class="h-10 mb-10"
+    />
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+      <div class="space-y-5">
+        <h2 class="text-3xl">We couldn't find that Web page</h2>
+        <p class="font-bold text-lg">Error 404</p>
+        <p>
+          We're sorry you ended up here. Sometimes a page gets moved or deleted,
+          but hopefully we can help you find what you're looking for.
+        </p>
+        <p>
+          Return to the <a href="/en" class="underline text-primary"
+            >homepage</a>
+        </p>
+      </div>
+
+      <div class="space-y-5">
+        <h2 class="text-3xl">Nous ne pouvons trouver cette page Web</h2>
+        <p class="font-bold text-lg">Erreur 404</p>
+        <p>
+          Nous sommes désolés que vous ayez abouti ici. Il arrive parfois qu'une
+          page ait été déplacée ou supprimée. Heureusement, nous pouvons vous
+          aider à trouver ce que vous cherchez.
+        </p>
+        <p>
+          Retournez à la <a href="/fr" class="underline text-primary"
+            >page d'accueil</a>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
