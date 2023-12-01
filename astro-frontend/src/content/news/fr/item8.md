@@ -1,7 +1,7 @@
 ---
 program: "ASSURANCE-EMPLOI"
 date: "2023-10-15"
-tag: "UPDATED"
+tag: "MISE À JOUR"
 "draft": false
 ---
 
