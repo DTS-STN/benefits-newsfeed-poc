@@ -13,6 +13,11 @@ details > summary {
   list-style: none;
 }
 
+input[type=checkbox] {
+  height: 30px;
+  width: 30px;
+}
+
 @layer base {
     /* Font families */
     h1,
