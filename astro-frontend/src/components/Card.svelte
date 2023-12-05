@@ -1,14 +1,14 @@
 <script>
-  export let id;
   import { onMount } from "svelte";
+  export let id;
 
-  let Y;
   let card;
   let cardHeight = 0;
+  let screenWidth;
 
   onMount(() => {
     card = document.querySelector(`#${id}`);
-    Y = screen.width;
+    screenWidth = window.screen.width;
   });
 
   function toggleOpen() {
@@ -20,19 +20,21 @@
 <div bind:clientHeight={cardHeight} {id} class="closed">
   <slot />
 </div>
-{#if Y>=568 && cardHeight > 200 || Y<568 && cardHeight>500}
-  <button on:click={toggleOpen} class="bg-primary text-white p-1 rounded">read more</button>
+{#if card && card.scrollHeight > cardHeight}
+  <button on:click={toggleOpen} class="bg-primary text-white p-1 rounded mt-5"
+    >read more</button
+  >
 {/if}
 
 <style>
   .closed {
-    max-height: 201px;
+    max-height: 200px;
     overflow: hidden;
   }
 
   @media screen and (max-width: 568px) {
     .closed {
-      max-height: 500px;
+      max-height: 450px;
     }
   }
 </style>
