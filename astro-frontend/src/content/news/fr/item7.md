@@ -1,7 +1,7 @@
 ---
 program: "SÉCURITÉ DE VIEILLESSE"
 date: "2023-09-15"
-tag: "MISE À JOUR"
+tag: "Mis à jour"
 "draft": false
 ---
 
