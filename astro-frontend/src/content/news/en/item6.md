@@ -1,7 +1,7 @@
 ---
 program: "GROCERY REBATE"
 date: "2023-06-15"
-tag: "NEW"
+tag: "New"
 "draft": false
 ---
 

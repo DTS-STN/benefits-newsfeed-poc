@@ -1,7 +1,7 @@
 ---
 program: "SERVICE DISRUPTIONS"
 date: "2023-08-16"
-tag: "NEW"
+tag: "New"
 "draft": false
 ---
 

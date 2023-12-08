@@ -1,7 +1,7 @@
 ---
 program: "EMPLOYMENT INSURANCE"
 date: "2023-10-15"
-tag: "UPDATED"
+tag: "Updated"
 "draft": false
 ---
 

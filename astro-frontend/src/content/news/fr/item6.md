@@ -1,7 +1,7 @@
 ---
 program: "REMBOURSEMENT POUR L'ÉPICERIE"
 date: "2023-06-15"
-tag: "NOUVEAU"
+tag: "Nouveau"
 "draft": false
 ---
 
