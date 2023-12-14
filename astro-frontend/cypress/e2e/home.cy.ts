@@ -1,6 +1,6 @@
 it("loads home page in english", () => {
   const page = cy.visit("/en");
-  page.get("title").should("have.text", "Benefits Newsfeed");
+  page.get("title").should("have.text", "Benefits newsfeed");
 });
 
 it("loads home page in french", () => {
