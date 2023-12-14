@@ -4,7 +4,7 @@ export const ui = {
     "banner.test-site-text":
       "This tool is a prototype. Some of the information may have errors.",
 
-    title: "Benefits Newsfeed",
+    title: "Benefits newsfeed",
     submit: "Submit",
     reset: "Reset",
 

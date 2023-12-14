@@ -2,7 +2,7 @@ it("loads splash page", () => {
   const page = cy.visit("/");
   page
     .get("title")
-    .should("have.text", "Benefit Newsfeed | (FR) Benefit Newsfeed");
+    .should("have.text", "Benefit Newsfeed | Flux d'informations sur les avantages");
 });
 
 it("can navigate to home page in english", () => {

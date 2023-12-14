@@ -4,7 +4,7 @@ import { ui } from "../src/i18n/ui";
 
 test("english translations work", () => {
   const t = useTranslations("en");
-  expect(t("title")).toBe("Benefits Newsfeed");
+  expect(t("title")).toBe("Benefits newsfeed");
 });
 
 test("french translations work", () => {
