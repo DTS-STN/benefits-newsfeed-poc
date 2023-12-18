@@ -1,10 +1,10 @@
 ---
-program: "SERVICE DISRUPTIONS"
+program: "Service disruptions"
 date: "2023-08-18"
 tag: "New"
 "draft": false
 ---
 
-## Temporary Closure Alert: Regina North Central Scheduled Outreach Site
+## Temporary closure of the Rolling Hills North scheduled outreach site
 
-Our Regina North Central Scheduled Outreach Site (Regina) is temporarily closed. We apologize for any inconvenience and will keep you updated on when services will resume. For immediate assistance, please use our [online services](https://www.canada.ca/en/employment-social-development/corporate/portfolio/service-canada.html) or [request a callback](https://eservices.canada.ca/en/service/).
+The Rolling Hills North scheduled outreach site is temporarily closed. We apologize for any inconvenience and will keep you updated on when services will resume. For immediate assistance, please request a callback [link](https://eservices.canada.ca/en/service/)  or try our online services [link](https://www.canada.ca/en/employment-social-development/services/my-account.html) 

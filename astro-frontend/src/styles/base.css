@@ -13,6 +13,11 @@ details > summary {
   list-style: none;
 }
 
+details[open] {
+  border: 1px solid #2572B4;
+}
+
+
 input[type=checkbox] {
   height: 30px;
   width: 30px;

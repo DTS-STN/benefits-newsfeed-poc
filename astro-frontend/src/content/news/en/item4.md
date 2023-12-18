@@ -1,18 +1,18 @@
 ---
-program: "SERVICE DISRUPTIONS"
+program: "Service disruptions"
 date: "2023-08-16"
 tag: "New"
 "draft": false
 ---
 
-## Important Update: Sign-In Partner Caisse Alliance Temporarily Unavailable
+## Sign-In Partner Caisse Alliance temporarily unavailable
 
-Starting October 16, 2023, Caisse Alliance is no longer be used a Sign-In Partner to access:
+Starting October 16, 2023, Caisse Alliance will no longer be used as a Sign-In Partner to access: 
 
 - My Service Canada Account (MSCA)
 - Canada Revenue Agency - My Account
-- Canada Revenue Agency - My Business Account
-- National Student Loans Service Centre account
+- Canada Revenue Agency - My Business Account 
+- National Student Loans Service Centre Account
 - ROE Web
 - Grants and Contributions Online Services (GCOS)
 

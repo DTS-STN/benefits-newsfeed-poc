@@ -94,7 +94,7 @@ export const ui = {
     submit: "Soumettre",
     reset: "Remise à zéro",
 
-    "filter.by": "Filter by benefit",
+    "filter.by": "Filtrer par prestation",
     "filter.summary": "Sélectionner le type de prestation",
 
     "search.heading": "rechercher des articles de presse",

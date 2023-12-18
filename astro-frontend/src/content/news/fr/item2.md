@@ -1,10 +1,10 @@
 ---
-program: "INTERRUPTIONS DE SERVICE"
+program: "Perturbations de service"
 date: "2023-08-18"
 tag: "Nouveau"
 "draft": false
 ---
 
-## Alerte de fermeture temporaire : site de portée planifiée du Centre-Nord de Regina
+## Fermeture temporaire du site mobile régulier de Rolling Hills North
 
-Notre site de portée planifiée du Centre-Nord de Regina (Regina) est temporairement fermé. Nous nous excusons pour tout inconvénient et vous tiendrons informés de la reprise des services. Pour une assistance immédiate, veuillez utiliser nos [services en ligne](https://www.canada.ca/fr/emploi-developpement-social/ministere/portefeuille/service-canada.html) ou [demander un rappel](https://eservices.canada.ca/fr/service/).
+Le site mobile régulier de Rolling Hills North est temporairement fermé. Nous nous excusons pour tout inconvénient et vous tiendrons informés de la reprise des services. Pour une assistance immédiate, veuillez [demander un rappel](https://eservices.canada.ca/fr/service/) ou utiliser nos [services en ligne](https://www.canada.ca/fr/emploi-developpement-social/services/mon-dossier.html)
