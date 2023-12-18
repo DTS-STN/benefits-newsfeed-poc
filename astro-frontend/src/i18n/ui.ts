@@ -4,10 +4,13 @@ export const ui = {
     "banner.test-site-text":
       "This tool is a prototype. Some of the information may have errors.",
 
+    "header.SCL": "Service Canada Labs",
+
     title: "Benefits newsfeed",
     submit: "Submit",
     reset: "Reset",
 
+    "filter.by": "Filter by benefit",
     "filter.summary": "Select benefit type",
 
     "search.heading": "search news articles",
@@ -85,10 +88,13 @@ export const ui = {
     "banner.test-site-text":
       "Cet outil est un prototype. Certaines informations peuvent comporter des erreurs.",
 
+    "header.SCL": "Laboratoires de Service Canada",
+
     title: "Flux d'informations sur les avantages",
     submit: "Soumettre",
     reset: "Remise à zéro",
 
+    "filter.by": "Filter by benefit",
     "filter.summary": "Sélectionner le type de prestation",
 
     "search.heading": "rechercher des articles de presse",

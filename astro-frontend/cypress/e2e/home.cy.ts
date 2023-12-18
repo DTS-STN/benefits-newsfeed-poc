@@ -30,7 +30,7 @@ it("can filter news items by search input", () => {
 it("can filter news items by checkbox input", () => {
   const page = cy.visit("/en");
   page.get("summary").click();
-  page.get("label").contains("OLD AGE SECURITY").click();
+  page.get("label").contains(/OLD AGE SECURITY/i).click();
   page
     .get("button")
     .contains(/submit/i)
@@ -48,7 +48,7 @@ it("can navigate with paginated urls", () => {
 it("can reset the filters after filtering results", () => {
   const page = cy.visit("/en");
   page.get("summary").click();
-  page.get("label").contains("OLD AGE SECURITY").click();
+  page.get("label").contains(/OLD AGE SECURITY/i).click();
   page.get("#search").type("EI");
   page
     .get("button")
