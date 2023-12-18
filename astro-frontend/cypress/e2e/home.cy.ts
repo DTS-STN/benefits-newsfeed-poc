@@ -54,7 +54,7 @@ it("can reset the filters after filtering results", () => {
     .get("button")
     .contains(/submit/i)
     .click();
-  page.url().should("equal", Cypress.config().baseUrl + "/en?cb1=1&search=EI");
+  page.url().should("equal", Cypress.config().baseUrl + "/en?cb2=1&search=EI");
   page.get("summary").click();
   page.get("#resetBtn").click();
   page.url().should("equal", Cypress.config().baseUrl + "/en");

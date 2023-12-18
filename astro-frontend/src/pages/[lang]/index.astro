@@ -52,10 +52,6 @@ function isChecked(program: string) {
   let idx = programs.indexOf(program);
   return `cb${idx}` in filters;
 }
-
-function toTitleCase(s: string) {
-  return s.toLowerCase().replace(/(?<= |^)./g, (e) => e.toUpperCase());
-}
 ---
 
 <Layout title={t("title")}>
@@ -102,7 +98,7 @@ function toTitleCase(s: string) {
                       checked={isChecked(filter)}
                       value={1}
                     />
-                    {toTitleCase(filter)}
+                    {filter}
                   </label>
                 ))
               }
