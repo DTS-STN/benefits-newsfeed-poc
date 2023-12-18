@@ -52,6 +52,10 @@ function isChecked(program: string) {
   let idx = programs.indexOf(program);
   return `cb${idx}` in filters;
 }
+
+function toTitleCase(s: string) {
+  return s.toLowerCase().replace(/(?<= |^)./g, (e) => e.toUpperCase());
+}
 ---
 
 <Layout title={t("title")}>
@@ -62,11 +66,13 @@ function isChecked(program: string) {
         <div class="border-b-4 border-b-[#AF3C43] w-14"></div>
       </div>
 
+      <h2 class="hidden md:block">{t("filter.by")}</h2>
       <div
         id="list"
-        class="flex flex-col md:flex-row md:justify-between gap-5 mb-5 h-full"
+        class="flex flex-col-reverse md:flex-row md:justify-between gap-5 mb-10 h-full"
       >
         <div class="relative md:min-w-[400px]">
+          <h2 class="md:hidden">{t("filter.by")}</h2>
           <details class="w-full md:min-w-[400px] bg-white md:absolute border">
             <summary class="flex items-center justify-between p-2">
               <span class="text-lg text-[#6F6F6F]">{t("filter.summary")}</span>
@@ -96,11 +102,11 @@ function isChecked(program: string) {
                       checked={isChecked(filter)}
                       value={1}
                     />
-                    {filter}
+                    {toTitleCase(filter)}
                   </label>
                 ))
               }
-              <div class="flex gap-2 mx-auto">
+              <div class="flex flex-row-reverse gap-2 mx-auto">
                 <button
                   class="font-semibold bg-primary text-white outline outline-1 focus-visible:ring p-1 rounded-sm hover:text-gray-100 text-lg"
                 >
@@ -118,7 +124,7 @@ function isChecked(program: string) {
         </div>
 
         <div class="grow md:max-w-[600px]">
-          <div class="flex mb-5">
+          <div class="flex">
             <label class="sr-only" for="search">{t("search.heading")}</label>
             <input
               form="filters"
@@ -147,7 +153,11 @@ function isChecked(program: string) {
           Array.from({ length: totalPages }, (_, i) => (
             <a
               href={createPaginatedUrl(i)}
-              class="inline-block text-[#335075] text-[20px] py-[10px] px-[16px] bg-[#DCDEE1] hover:bg-[#335075] hover:text-[#DCDEE1] no-underline border"
+              class={`${
+                page === i
+                  ? "bg-[#2572B4] text-white"
+                  : "bg-[#DCDEE1] text-[#335075]"
+              } inline-block text-[20px] py-[10px] px-[16px] hover:bg-[#335075] hover:text-[#DCDEE1] no-underline border`}
             >
               {i + 1}
             </a>
