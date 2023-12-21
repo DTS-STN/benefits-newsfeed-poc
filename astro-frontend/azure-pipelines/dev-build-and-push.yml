@@ -4,7 +4,7 @@ trigger:
 pr: none
 
 variables:
-  azureContainerRegistry.repository: 'benefits-newsfeed'
+  azureContainerRegistry.repository: 'benefits-newsfeed/astro-frontend'
   azureContainerRegistry.name: 'DTSShared-December/2023'
   azureContainerRegistry.domain: 'dtsshared.azurecr.io'
   vmImageName: "ubuntu-latest"
@@ -44,7 +44,7 @@ stages:
               tags: |
                 $(image.tag)
                 latest
-                release-candidate
+                stable
               arguments: '--pull'
 
           - task: Docker@2
@@ -55,4 +55,4 @@ stages:
               tags: |
                 $(image.tag)
                 latest
-                release-candidate
+                stable
