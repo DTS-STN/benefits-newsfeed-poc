@@ -28,16 +28,15 @@ stages:
             continueOnError: true
           - task: Docker@2
             inputs:
-              containerRegistry: "$(azureContainerRegistry.name)"
-              repository: "$(azureContainerRegistry.repository)"
-              command: "build"
-              Dockerfile: "./Dockerfile"
+              containerRegistry: '$(azureContainerRegistry.name)'
+              repository: '$(azureContainerRegistry.repository)'
+              command: 'build'
+              Dockerfile: './astro-frontend/Dockerfile'
               tags: |
                 $(tag)
                 latest
                 release-candidate
-              arguments: |
-                --pull
+              arguments: '--pull'
 
           - task: Docker@2
             inputs:
