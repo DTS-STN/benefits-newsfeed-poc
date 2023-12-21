@@ -4,9 +4,9 @@ trigger:
 pr: none
 
 variables:
-  azureContainerRegistry.repository: "benefits-newsfeed"
-  azureContainerRegistry.name: "acrbenefitsnewsfeed"
-  azureContainerRegistry.domain: "acrbenefitsnewsfeed.azurecr.io"
+  azureContainerRegistry.repository: 'benefits-newsfeed'
+  azureContainerRegistry.name: 'DTS Shared Container Repo 10/11/2023'
+  azureContainerRegistry.domain: 'dtsshared.azurecr.io'
   vmImageName: "ubuntu-latest"
   image.tag: '$(Build.SourceVersion)'
 
