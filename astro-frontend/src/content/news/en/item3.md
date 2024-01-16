@@ -1,5 +1,5 @@
 ---
-program: "Canada Dental Benefit"
+program: "Canada Dental Care Plan"
 date: "2023-06-22"
 tag: "New"
 "draft": false

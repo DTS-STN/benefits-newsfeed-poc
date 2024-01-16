@@ -7,7 +7,7 @@ it("loads home page in french", () => {
   const page = cy.visit("/fr");
   page
     .get("title")
-    .should("have.text", "Flux d'informations sur les avantages");
+    .should("have.text", "Fil d'actualité des prestations");
 });
 
 it("can toggle language to french", () => {
@@ -33,7 +33,7 @@ it("can filter news items by checkbox input", () => {
   page.get("label").contains(/OLD AGE SECURITY/i).click();
   page
     .get("button")
-    .contains(/submit/i)
+    .contains(/filter/i)
     .click();
   const titles = page.get("span").contains("old age");
   page.should("not.be.empty", titles);
@@ -52,7 +52,7 @@ it("can reset the filters after filtering results", () => {
   page.get("#search").type("EI");
   page
     .get("button")
-    .contains(/submit/i)
+    .contains(/filter/i)
     .click();
   page.url().should("equal", Cypress.config().baseUrl + "/en?cb2=1&search=EI");
   page.get("summary").click();
