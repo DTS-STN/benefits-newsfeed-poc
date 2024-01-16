@@ -1,12 +1,14 @@
 ---
-const { item } = Astro.props;
+const { item, lang } = Astro.props;
 const { Content } = await item.render();
 ---
 
 <div class="py-4 space-y-2 prose max-w-none">
   <div class="space-x-2">
     <span class="text-gray-500 text-sm">
-      <span>{item.data.program}</span> | <span>{item.data.date}</span>
+      <span>{item.data.program}</span> | <span>{new Intl.DateTimeFormat(`${lang}-CA`,{
+        dateStyle: "long"
+      }).format(new Date(item.data.date))}</span>
     </span>
     <span
       class={`${

@@ -2,24 +2,24 @@ export const ui = {
   en: {
     "banner.test-site": "Alpha",
     "banner.test-site-text":
-      "This tool is a prototype. Some of the information may have errors.",
+      "This tool is for demonstration purposes. Information may be missing or not correct.",
 
     "header.SCL": "Service Canada Labs",
 
     title: "Benefits newsfeed",
-    submit: "Submit",
+    submit: "Filter",
     reset: "Reset",
 
     "filter.by": "Filter by benefit",
-    "filter.summary": "Select benefit type",
+    "filter.summary": "Select benefit",
 
     "search.heading": "search news articles",
-    "search.placeholder": "Search by benefit name or source",
+    "search.placeholder": "Search by benefit name",
     "search.button": "Search",
 
-    "wip.title": "This newsfeed is a work in progress",
-    "wip.p": "You can help improve it by giving your feedback",
-    "wip.survey": "Take survey",
+    "wip.title": "Help improve this tool",
+    "wip.p": "This newsfeed is a work in progress. You can help improve it by giving your feedback.",
+    "wip.survey": "Give feedback",
 
     "date-modified": "Date modified: 2023-11-30",
 
@@ -86,24 +86,24 @@ export const ui = {
   fr: {
     "banner.test-site": "Alpha",
     "banner.test-site-text":
-      "Cet outil est un prototype. Certaines informations peuvent comporter des erreurs.",
+      "Cet outil n'est fourni qu'à des fins de démonstration. Des informations peuvent être manquantes ou incorrectes.",
 
     "header.SCL": "Laboratoires de Service Canada",
 
-    title: "Flux d'informations sur les avantages",
-    submit: "Soumettre",
-    reset: "Remise à zéro",
+    title: "Fil d'actualité des prestations",
+    submit: "Filtrer",
+    reset: "Réinitialiser les filtres",
 
     "filter.by": "Filtrer par prestation",
-    "filter.summary": "Sélectionner le type de prestation",
+    "filter.summary": "Sélectionner des prestations",
 
     "search.heading": "rechercher des articles de presse",
-    "search.placeholder": "Recherche par nom de prestation ou par source",
+    "search.placeholder": "Rechercher par nom de prestation",
     "search.button": "Recherche",
 
-    "wip.title": "Ce fil d'actualité est en cours d'élaboration",
-    "wip.p": "Vous pouvez contribuer à l'améliorer en donnant votre avis",
-    "wip.survey": "Répondre à l'enquête",
+    "wip.title": "Aidez-nous à améliorer le fil d'actualité",
+    "wip.p": "VCe fil d'actualité est un travail en cours. Vous pouvez aider à l'améliorer en donnant votre avis.",
+    "wip.survey": "Fournir des commentaires",
 
     "date-modified": "Date de modification: 2023-11-30",
 

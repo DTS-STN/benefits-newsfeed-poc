@@ -1,5 +1,5 @@
 ---
-program: "Canada Dental Benefit"
+program: "Canada Dental Care Plan"
 date: "2023-12-11"
 tag: "New"
 "draft": false
@@ -11,4 +11,4 @@ Applications for the new Canadian Dental Care Plan (CDCP) will open in phases.
 
 Starting in mid-December 2023, letters will be mailed to seniors aged 87 and above who may qualify. 
 
-Visit Canada.ca for the full schedule of when you can [apply](https://www.canada.ca/en/services/benefits/dental/dental-care-plan/apply.html#when).
+Visit Canada.ca for the full schedule of [when you can apply](https://www.canada.ca/en/services/benefits/dental/dental-care-plan/apply.html#when).

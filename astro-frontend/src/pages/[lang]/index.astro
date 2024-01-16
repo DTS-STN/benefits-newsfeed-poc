@@ -104,13 +104,13 @@ function isChecked(program: string) {
               }
               <div class="flex flex-row-reverse gap-2 mx-auto">
                 <button
-                  class="font-semibold bg-primary text-white outline outline-1 focus-visible:ring p-1 rounded-sm hover:text-gray-100 text-lg"
+                  class="font-[500] bg-primary text-white outline outline-1 focus-visible:ring p-1 rounded-sm hover:text-gray-100 text-lg"
                 >
                   {t("submit")}
                 </button>
                 <button
                   id="resetBtn"
-                  class="font-semibold text-gray-600 outline outline-1 focus-visible:ring p-1 rounded-sm hover:text-gray-900 text-lg"
+                  class="font-[500] text-gray-600 outline outline-1 focus-visible:ring p-1 rounded-sm hover:text-gray-900 text-lg"
                 >
                   {t("reset")}
                 </button>
@@ -141,7 +141,7 @@ function isChecked(program: string) {
       </div>
 
       <div class="bg-white divide-y px-2 space-y-4 border-t mb-10 lg:ml-60">
-        {filteredData.map((item) => <NewsItem item={item} />)}
+        {filteredData.map((item) => <NewsItem item={item} lang={lang}/>)}
       </div>
 
       <div class="text-center">
@@ -153,7 +153,7 @@ function isChecked(program: string) {
                 page === i
                   ? "bg-[#2572B4] text-white"
                   : "bg-[#DCDEE1] text-[#335075]"
-              } inline-block text-[20px] py-[10px] px-[16px] hover:bg-[#335075] hover:text-[#DCDEE1] no-underline border`}
+              } font-bold inline-block text-[20px] py-[10px] px-[16px] hover:bg-[#335075] hover:text-[#DCDEE1] no-underline border`}
             >
               {i + 1}
             </a>

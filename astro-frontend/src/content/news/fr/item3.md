@@ -1,5 +1,5 @@
 ---
-program: "Prestation dentaire canadienne"
+program: "Régime canadien de soins dentaires"
 date: "2023-06-22"
 tag: "Nouveau"
 "draft": false
