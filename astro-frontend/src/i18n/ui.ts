@@ -18,8 +18,11 @@ export const ui = {
     "search.button": "Search",
 
     "wip.title": "Help improve this tool",
-    "wip.p": "This newsfeed is a work in progress. You can help improve it by giving your feedback.",
+    "wip.p":
+      "This newsfeed is a work in progress. You can help improve it by giving your feedback.",
     "wip.survey": "Give feedback",
+    "wip.survey.link":
+      "https://forms-formulaires.alpha.canada.ca/en/id/clqp8vscx01gux382ahxf92gs",
 
     "date-modified": "Date modified: 2023-11-30",
 
@@ -102,8 +105,11 @@ export const ui = {
     "search.button": "Recherche",
 
     "wip.title": "Aidez-nous à améliorer le fil d'actualité",
-    "wip.p": "VCe fil d'actualité est un travail en cours. Vous pouvez aider à l'améliorer en donnant votre avis.",
+    "wip.p":
+      "VCe fil d'actualité est un travail en cours. Vous pouvez aider à l'améliorer en donnant votre avis.",
     "wip.survey": "Fournir des commentaires",
+    "wip.survey.link":
+      "https://forms-formulaires.alpha.canada.ca/fr/id/clqp8vscx01gux382ahxf92gs",
 
     "date-modified": "Date de modification: 2023-11-30",
 
