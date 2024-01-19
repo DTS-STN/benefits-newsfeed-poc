@@ -5,6 +5,8 @@ export const ui = {
       "This tool is for demonstration purposes. Information may be missing or not correct.",
 
     "header.SCL": "Service Canada Labs",
+    "header.navigator": "Benefits Navigator",
+    "header.navigator.link": "https://alpha.service.canada.ca/en/projects/benefits-navigator",
 
     title: "Benefits newsfeed",
     submit: "Filter",
@@ -92,6 +94,8 @@ export const ui = {
       "Cet outil n'est fourni qu'à des fins de démonstration. Des informations peuvent être manquantes ou incorrectes.",
 
     "header.SCL": "Laboratoires de Service Canada",
+    "header.navigator": "Navigateur de prestations",
+    "header.navigator.link": "https://alpha.service.canada.ca/fr/projets/navigateur-prestations",
 
     title: "Fil d'actualité des prestations",
     submit: "Filtrer",

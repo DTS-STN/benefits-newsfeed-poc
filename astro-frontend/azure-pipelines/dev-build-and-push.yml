@@ -32,7 +32,7 @@ stages:
               containerRegistry: "$(azureContainerRegistry.name)"
               repository: "$(azureContainerRegistry.repository)"
               command: "login"
-          - script: "docker pull $(azureContainerRegistry.domain)/$(azureContainerRegistry.repository):latest"
+          - script: "docker pull $(azureContainerRegistry.repository):latest"
             displayName: Pull latest for layer caching
             continueOnError: true
           - task: Docker@2
