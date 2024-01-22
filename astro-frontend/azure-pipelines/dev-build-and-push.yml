@@ -49,6 +49,7 @@ stages:
 
           - task: Docker@2
             inputs:
+              containerRegistry: "$(azureContainerRegistry.name)"
               repository: "$(azureContainerRegistry.repository)"
               command: "push"
               tags: |
