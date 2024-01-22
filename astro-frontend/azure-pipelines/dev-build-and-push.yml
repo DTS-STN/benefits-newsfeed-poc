@@ -5,7 +5,7 @@ pr: none
 
 variables:
   azureContainerRegistry.repository: 'benefits-newsfeed/astro-frontend'
-  azureContainerRegistry.name: 'DTSShared-December/2023'
+  azureContainerRegistry.name: 'DTS Shared Container Repo 10/11/2023'
   azureContainerRegistry.domain: 'dtsshared.azurecr.io'
   vmImageName: "ubuntu-latest"
   image.tag: '$(Build.SourceVersion)'
