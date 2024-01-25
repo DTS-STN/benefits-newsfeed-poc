@@ -18,6 +18,7 @@ export const ui = {
     "search.heading": "search news articles",
     "search.placeholder": "Search by benefit name",
     "search.button": "Search",
+    "search.noresults": "No results found",
 
     "wip.title": "Help improve this tool",
     "wip.p":
@@ -107,6 +108,7 @@ export const ui = {
     "search.heading": "rechercher des articles de presse",
     "search.placeholder": "Rechercher par nom",
     "search.button": "Recherche",
+    "search.noresults": "Aucun résultat trouvé",
 
     "wip.title": "Aidez-nous à améliorer le fil d'actualité",
     "wip.p":

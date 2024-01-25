@@ -19,7 +19,6 @@ delete filters["search"];
 let filteredData = newsItems.filter((item) => {
   let haystack = `${item.body} ${item.data.program}`.toLocaleLowerCase();
   let keys = Object.keys(filters);
-
   if (keys.length === 0 && "search" in searchParams) {
     return haystack.includes(searchParams.search?.toLowerCase());
   }
@@ -141,7 +140,10 @@ function isChecked(program: string) {
       </div>
 
       <div class="bg-white divide-y px-2 space-y-4 border-t mb-10 lg:ml-60">
-        {filteredData.map((item) => <NewsItem item={item} lang={lang}/>)}
+        {filteredData.map((item) => <NewsItem item={item} lang={lang} />)}
+      </div>
+      <div id="results-status" role="status" class="text-center">
+        {filteredData.length === 0 ? <p>{t("search.noresults")}</p> : ""}
       </div>
 
       <div class="text-center">
@@ -174,7 +176,7 @@ function isChecked(program: string) {
           {t("wip.p")}
         </p>
         <a
-          href={t('wip.survey.link')}
+          href={t("wip.survey.link")}
           target="_blank"
           class="bg-primary text-white p-2 rounded hover:bg-slate-950 max-w-fit"
           >{t("wip.survey")}</a
@@ -198,5 +200,13 @@ function isChecked(program: string) {
     e.preventDefault();
     form.reset();
     window.location.href = window.location.origin + window.location.pathname;
+  });
+  // Handle search text input when user hits Enter
+  const searchInput = document.querySelector("#search") as HTMLFormElement;
+  searchInput.addEventListener("keydown", (event: KeyboardEvent) => {
+    if (event.key === "Enter") {
+      event.preventDefault()
+      form.submit()
+    }
   });
 </script>
