@@ -203,9 +203,9 @@ function isChecked(program: string) {
   });
   // Handle search text input when user hits Enter
   const searchInput = document.querySelector("#search") as HTMLFormElement;
-  searchInput.addEventListener("keydown", (event: KeyboardEvent) => {
-    if (event.key === "Enter") {
-      event.preventDefault()
+  searchInput.addEventListener("keydown", (e: KeyboardEvent) => {
+    if (e.key === "Enter") {
+      e.preventDefault()
       form.submit()
     }
   });
