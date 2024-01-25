@@ -102,17 +102,17 @@ function isChecked(program: string) {
                   </label>
                 ))
               }
-              <div class="flex flex-row-reverse gap-2 mx-auto">
-                <button
-                  class="font-[500] bg-primary text-white outline outline-1 focus-visible:ring p-1 rounded-sm hover:text-gray-100 text-lg"
-                >
-                  {t("submit")}
-                </button>
+              <div class="flex flex-row gap-2 mx-auto">
                 <button
                   id="resetBtn"
                   class="font-[500] text-gray-600 outline outline-1 focus-visible:ring p-1 rounded-sm hover:text-gray-900 text-lg"
                 >
                   {t("reset")}
+                </button>
+                <button
+                  class="font-[500] bg-primary text-white outline outline-1 focus-visible:ring p-1 rounded-sm hover:text-gray-100 text-lg"
+                >
+                  {t("submit")}
                 </button>
               </div>
             </form>
