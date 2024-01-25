@@ -20,9 +20,9 @@ const t = useTranslations(lang);
           <li><a href={t("footer.about.href")}>{t("footer.about")}</a></li>
         </ul>
 
-        <h4 class="relative">
+        <h3 class="relative">
           <span class="sr-only">{t("footer.themes")}</span>
-        </h4>
+        </h3>
 
         <ul
           class="grid md:grid-cols-3 gap-2 md:gap-4 md:place-content-center text-sm"
@@ -101,7 +101,7 @@ const t = useTranslations(lang);
 </footer>
 
 <style>
-  h4::before {
+  h3::before {
     border-bottom: 4px solid #fff;
     content: "";
     display: block;
