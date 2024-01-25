@@ -7,6 +7,7 @@ export const ui = {
     "header.SCL": "Service Canada Labs",
     "header.navigator": "Benefits Navigator",
     "header.navigator.link": "https://alpha.service.canada.ca/en/projects/benefits-navigator",
+    "header.headerlogo.altText": "Government of Canada",
 
     title: "Benefits newsfeed",
     submit: "Filter",
@@ -97,6 +98,7 @@ export const ui = {
     "header.SCL": "Laboratoires de Service Canada",
     "header.navigator": "Navigateur de prestations",
     "header.navigator.link": "https://alpha.service.canada.ca/fr/projets/navigateur-prestations",
+    "header.headerlogo.altText": "Gouvernement du Canada",
 
     title: "Fil d'actualité des prestations",
     submit: "Filtrer",
