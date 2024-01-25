@@ -105,7 +105,7 @@ export const ui = {
     "filter.summary": "Sélectionner des prestations",
 
     "search.heading": "rechercher des articles de presse",
-    "search.placeholder": "Rechercher par nom de prestation",
+    "search.placeholder": "Rechercher par nom",
     "search.button": "Recherche",
 
     "wip.title": "Aidez-nous à améliorer le fil d'actualité",
