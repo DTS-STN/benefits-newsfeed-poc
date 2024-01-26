@@ -146,21 +146,30 @@ function isChecked(program: string) {
         {filteredData.length === 0 ? <p>{t("search.noresults")}</p> : ""}
       </div>
 
-      <div class="text-center">
-        {
-          Array.from({ length: totalPages }, (_, i) => (
-            <a
-              href={createPaginatedUrl(i)}
-              class={`${
-                page === i
-                  ? "bg-[#2572B4] text-white"
-                  : "bg-[#DCDEE1] text-[#335075]"
-              } font-bold inline-block text-[20px] py-[10px] px-[16px] hover:bg-[#335075] hover:text-[#DCDEE1] no-underline border`}
-            >
-              {i + 1}
-            </a>
-          ))
-        }
+      <div class="flex justify-center text-center">
+        <nav aria-label="pagination">
+          <ul class="flex flex-row">
+            {
+              Array.from({ length: totalPages }, (_, i) => (
+                <li>
+                  <a
+                    href={createPaginatedUrl(i)}
+                    class={`${
+                      page === i
+                        ? "bg-[#2572B4] text-white"
+                        : "bg-[#DCDEE1] text-[#335075]"
+                    } font-bold inline-block text-[20px] py-[10px] px-[16px] hover:bg-[#335075] hover:text-[#DCDEE1] no-underline border`}
+                    aria-label={page === i ? `page ${page + 1}` : ""}
+                    aria-current={page === i ? "page" : ""}
+                  >
+                    {i + 1}
+                    {page !== i ? <span class="sr-only">page</span> : ""}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </nav>
       </div>
     </div>
   </main>
