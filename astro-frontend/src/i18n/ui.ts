@@ -13,8 +13,8 @@ export const ui = {
     submit: "Filter",
     reset: "Reset",
 
-    "filter.by": "Filter by benefit",
-    "filter.summary": "Select benefit",
+    "filter.by": "Filter",
+    "filter.summary": "Filter by benefit type",
 
     "search.heading": "search news articles",
     "search.placeholder": "Search by benefit name",
@@ -104,8 +104,8 @@ export const ui = {
     submit: "Filtrer",
     reset: "Réinitialiser les filtres",
 
-    "filter.by": "Filtrer par prestation",
-    "filter.summary": "Sélectionner des prestations",
+    "filter.by": "Filtrer",
+    "filter.summary": "Filtrer par type de prestation",
 
     "search.heading": "rechercher des articles de presse",
     "search.placeholder": "Rechercher par nom",
