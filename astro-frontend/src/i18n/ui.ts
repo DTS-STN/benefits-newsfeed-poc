@@ -7,17 +7,19 @@ export const ui = {
     "header.SCL": "Service Canada Labs",
     "header.navigator": "Benefits Navigator",
     "header.navigator.link": "https://alpha.service.canada.ca/en/projects/benefits-navigator",
+    "header.headerlogo.altText": "Government of Canada",
 
     title: "Benefits newsfeed",
     submit: "Filter",
     reset: "Reset",
 
-    "filter.by": "Filter by benefit",
-    "filter.summary": "Select benefit",
+    "filter.by": "Filter",
+    "filter.summary": "Filter by benefit type",
 
     "search.heading": "search news articles",
     "search.placeholder": "Search by benefit name",
     "search.button": "Search",
+    "search.noresults": "No results found",
 
     "wip.title": "Help improve this tool",
     "wip.p":
@@ -96,17 +98,19 @@ export const ui = {
     "header.SCL": "Laboratoires de Service Canada",
     "header.navigator": "Navigateur de prestations",
     "header.navigator.link": "https://alpha.service.canada.ca/fr/projets/navigateur-prestations",
+    "header.headerlogo.altText": "Gouvernement du Canada",
 
     title: "Fil d'actualité des prestations",
     submit: "Filtrer",
     reset: "Réinitialiser les filtres",
 
-    "filter.by": "Filtrer par prestation",
-    "filter.summary": "Sélectionner des prestations",
+    "filter.by": "Filtrer",
+    "filter.summary": "Filtrer par type de prestation",
 
     "search.heading": "rechercher des articles de presse",
-    "search.placeholder": "Rechercher par nom de prestation",
+    "search.placeholder": "Rechercher par nom",
     "search.button": "Recherche",
+    "search.noresults": "Aucun résultat trouvé",
 
     "wip.title": "Aidez-nous à améliorer le fil d'actualité",
     "wip.p":

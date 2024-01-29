@@ -28,17 +28,19 @@ function toggleUrl() {
       <img
         src=`/goc-${lang}.svg`
         class="h-5 sm:h-8"
-        alt="Government of Canada"
+        alt={t("header.headerlogo.altText")}
         property="logo"
       />
       <a
         href=`${toggleUrl()}`
         class="hidden sm:block underline text-primary visited:text-violet-700"
+        lang={lang === "en" ? "fr" : "en"}
         >{lang === "en" ? "Français" : "English"}</a
       >
       <a
         href=`${toggleUrl()}`
         class="sm:hidden underline text-primary visited:text-violet-700"
+        lang={lang === "en" ? "fr" : "en"}
         >{lang === "en" ? "FR" : "EN"}</a
       >
     </div>

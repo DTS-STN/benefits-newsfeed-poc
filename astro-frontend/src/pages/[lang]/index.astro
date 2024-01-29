@@ -19,7 +19,6 @@ delete filters["search"];
 let filteredData = newsItems.filter((item) => {
   let haystack = `${item.body} ${item.data.program}`.toLocaleLowerCase();
   let keys = Object.keys(filters);
-
   if (keys.length === 0 && "search" in searchParams) {
     return haystack.includes(searchParams.search?.toLowerCase());
   }
@@ -102,17 +101,17 @@ function isChecked(program: string) {
                   </label>
                 ))
               }
-              <div class="flex flex-row-reverse gap-2 mx-auto">
-                <button
-                  class="font-[500] bg-primary text-white outline outline-1 focus-visible:ring p-1 rounded-sm hover:text-gray-100 text-lg"
-                >
-                  {t("submit")}
-                </button>
+              <div class="flex flex-row gap-2 mx-auto">
                 <button
                   id="resetBtn"
                   class="font-[500] text-gray-600 outline outline-1 focus-visible:ring p-1 rounded-sm hover:text-gray-900 text-lg"
                 >
                   {t("reset")}
+                </button>
+                <button
+                  class="font-[500] bg-primary text-white outline outline-1 focus-visible:ring p-1 rounded-sm hover:text-gray-100 text-lg"
+                >
+                  {t("submit")}
                 </button>
               </div>
             </form>
@@ -141,24 +140,36 @@ function isChecked(program: string) {
       </div>
 
       <div class="bg-white divide-y px-2 space-y-4 border-t mb-10 lg:ml-60">
-        {filteredData.map((item) => <NewsItem item={item} lang={lang}/>)}
+        {filteredData.map((item) => <NewsItem item={item} lang={lang} />)}
+      </div>
+      <div id="results-status" role="status" class="text-center">
+        {filteredData.length === 0 ? <p>{t("search.noresults")}</p> : ""}
       </div>
 
-      <div class="text-center">
-        {
-          Array.from({ length: totalPages }, (_, i) => (
-            <a
-              href={createPaginatedUrl(i)}
-              class={`${
-                page === i
-                  ? "bg-[#2572B4] text-white"
-                  : "bg-[#DCDEE1] text-[#335075]"
-              } font-bold inline-block text-[20px] py-[10px] px-[16px] hover:bg-[#335075] hover:text-[#DCDEE1] no-underline border`}
-            >
-              {i + 1}
-            </a>
-          ))
-        }
+      <div class="flex justify-center text-center">
+        <nav aria-label="pagination">
+          <ul class="flex flex-row">
+            {
+              Array.from({ length: totalPages }, (_, i) => (
+                <li>
+                  <a
+                    href={createPaginatedUrl(i)}
+                    class={`${
+                      page === i
+                        ? "bg-[#2572B4] text-white"
+                        : "bg-[#DCDEE1] text-[#335075]"
+                    } font-bold inline-block text-[20px] py-[10px] px-[16px] hover:bg-[#335075] hover:text-[#DCDEE1] no-underline border`}
+                    aria-label={page === i ? `page ${page + 1}` : ""}
+                    aria-current={page === i ? "page" : ""}
+                  >
+                    {i + 1}
+                    {page !== i ? <span class="sr-only">page</span> : ""}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </nav>
       </div>
     </div>
   </main>
@@ -174,7 +185,7 @@ function isChecked(program: string) {
           {t("wip.p")}
         </p>
         <a
-          href={t('wip.survey.link')}
+          href={t("wip.survey.link")}
           target="_blank"
           class="bg-primary text-white p-2 rounded hover:bg-slate-950 max-w-fit"
           >{t("wip.survey")}</a
@@ -198,5 +209,13 @@ function isChecked(program: string) {
     e.preventDefault();
     form.reset();
     window.location.href = window.location.origin + window.location.pathname;
+  });
+  // Handle search text input when user hits Enter
+  const searchInput = document.querySelector("#search") as HTMLFormElement;
+  searchInput.addEventListener("keydown", (e: KeyboardEvent) => {
+    if (e.key === "Enter") {
+      e.preventDefault()
+      form.submit()
+    }
   });
 </script>

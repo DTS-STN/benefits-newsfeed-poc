@@ -9,7 +9,7 @@ const t = useTranslations(lang);
   <div class="bg-primary text-white px-2 py-5">
     <div class="max-w-7xl mx-auto">
       <nav>
-        <h3 class="text-[20px] mb-4">{t("footer.goc")}</h3>
+        <h2 class="text-[20px] mb-4">{t("footer.goc")}</h2>
         <ul
           class="grid md:grid-cols-3 gap-2 md:gap-4 md:place-content-center mb-10 text-sm"
         >
@@ -20,7 +20,9 @@ const t = useTranslations(lang);
           <li><a href={t("footer.about.href")}>{t("footer.about")}</a></li>
         </ul>
 
-        <h4 class="relative"><span class="sr-only">{t('footer.themes')}</span></h4>
+        <h3 class="relative">
+          <span class="sr-only">{t("footer.themes")}</span>
+        </h3>
 
         <ul
           class="grid md:grid-cols-3 gap-2 md:gap-4 md:place-content-center text-sm"
@@ -51,7 +53,7 @@ const t = useTranslations(lang);
             <a href={t("footer.policing.href")}>{t("footer.policing")}</a>
           </li>
           <li>
-            <a href={t("footer.transport.href")}>{t("footer.infra")}</a>
+            <a href={t("footer.infra.href")}>{t("footer.infra")}</a>
           </li>
           <li>
             <a href={t("footer.world.href")}>{t("footer.world")}</a>
@@ -83,7 +85,7 @@ const t = useTranslations(lang);
           <a href={t("footer.mobile.href")}>{t("footer.mobile")}</a>
         </li>
         <li>
-          <a href={t("footer.terms-and-confitions.href")}
+          <a href={t("footer.terms-and-conditions.href")}
             >{t("footer.terms-and-conditions")}</a
           >
         </li>
@@ -99,7 +101,7 @@ const t = useTranslations(lang);
 </footer>
 
 <style>
-  h4::before {
+  h3::before {
     border-bottom: 4px solid #fff;
     content: "";
     display: block;
