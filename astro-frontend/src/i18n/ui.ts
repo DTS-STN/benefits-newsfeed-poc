@@ -8,6 +8,8 @@ export const ui = {
     "header.navigator": "Benefits Navigator",
     "header.navigator.link": "https://alpha.service.canada.ca/en/projects/benefits-navigator",
     "header.headerlogo.altText": "Government of Canada",
+    "header.skipToMainContentLink": "Skip to main content",
+    "header.skipToFooterLink": "Skip to footer",
 
     title: "Benefits newsfeed",
     submit: "Filter",
@@ -99,6 +101,8 @@ export const ui = {
     "header.navigator": "Navigateur de prestations",
     "header.navigator.link": "https://alpha.service.canada.ca/fr/projets/navigateur-prestations",
     "header.headerlogo.altText": "Gouvernement du Canada",
+    "header.skipToMainContentLink": "Passer au contenu principal",
+    "header.skipToFooterLink": "Passer au pied de page",
 
     title: "Fil d'actualité des prestations",
     submit: "Filtrer",
