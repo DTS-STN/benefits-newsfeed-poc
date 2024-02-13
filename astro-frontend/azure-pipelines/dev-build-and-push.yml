@@ -45,7 +45,9 @@ stages:
                 $(image.tag)
                 latest
                 stable
-              arguments: '--pull'
+              arguments: | 
+                --pull
+                --build-arg ADOBE_ANALYTICS_URL=$(ADOBE_ANALYTICS_URL)
 
           - task: Docker@2
             inputs:

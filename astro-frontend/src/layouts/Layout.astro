@@ -15,11 +15,34 @@ const { lang } = Astro.params;
 <!doctype html>
 <html lang={lang}>
   <head>
+    {
+      process.env.ADOBE_ANALYTICS_URL ? (
+        <script src={process.env.ADOBE_ANALYTICS_URL} />
+      ) : (
+        ""
+      )
+    }
     <meta charset="UTF-8" />
     <meta name="description" content="benefit navgiator newsfeed" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
+    <!-- Adobe Analytics Required Metadata Properties-->
+    <meta name="dcterms.title" content={title} />
+    <meta
+      name="dcterms.language"
+      content={lang === "en" ? "eng" : "fra"}
+      title="ISO639-2/T"
+    />
+    <meta
+      name="dcterms.creator"
+      content={lang === "en"
+        ? "Employment and Social Development Canada"
+        : "Emploi et Développement social Canada"}
+    />
+    <meta name="dcterms.accessRights" content="2" />
+    <meta name="dcterms.service" content="ESDC-EDSC_Benefits_Newsfeed_Fil_d’actualite" />
+
     <title>{title}</title>
     <ViewTransitions />
   </head>
@@ -27,5 +50,12 @@ const { lang } = Astro.params;
     <Header lang={lang} />
     <slot />
     <Footer lang={lang} />
+    {
+      process.env.ADOBE_ANALYTICS_URL ? (
+        <script type="text/javascript">_satellite.pageBottom()</script>
+      ) : (
+        ""
+      )
+    }
   </body>
 </html>
