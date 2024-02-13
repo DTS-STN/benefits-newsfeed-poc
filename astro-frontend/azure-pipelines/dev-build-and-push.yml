@@ -45,7 +45,8 @@ stages:
                 $(image.tag)
                 latest
                 stable
-              arguments: '--pull'
+              arguments: | 
+                --pull
 
           - task: Docker@2
             inputs:
