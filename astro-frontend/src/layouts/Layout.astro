@@ -16,8 +16,8 @@ const { lang } = Astro.params;
 <html lang={lang}>
   <head>
     {
-      process.env.ADOBE_ANALYTICS_URL ? (
-        <script src={process.env.ADOBE_ANALYTICS_URL} />
+      import.meta.env.ADOBE_ANALYTICS_URL ? (
+        <script src={import.meta.env.ADOBE_ANALYTICS_URL} />
       ) : (
         ""
       )
@@ -51,7 +51,7 @@ const { lang } = Astro.params;
     <slot />
     <Footer lang={lang} />
     {
-      process.env.ADOBE_ANALYTICS_URL ? (
+      import.meta.env.ADOBE_ANALYTICS_URL ? (
         <script type="text/javascript">_satellite.pageBottom()</script>
       ) : (
         ""
