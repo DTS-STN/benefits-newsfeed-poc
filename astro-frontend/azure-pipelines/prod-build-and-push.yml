@@ -1,5 +1,7 @@
 trigger:
-  - main
+  tags:
+    include:
+    - v*
 
 pr: none
 
@@ -43,7 +45,7 @@ stages:
               Dockerfile: './astro-frontend/Dockerfile'
               tags: |
                 $(image.tag)
-                release-candidate
+                production-release
                 latest
               arguments: | 
                 --pull
@@ -56,5 +58,5 @@ stages:
               command: "push"
               tags: |
                 $(image.tag)
-                release-candidate
+                production-release
                 latest
