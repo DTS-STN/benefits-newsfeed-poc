@@ -43,8 +43,8 @@ stages:
               Dockerfile: './astro-frontend/Dockerfile'
               tags: |
                 $(image.tag)
+                release-candidate
                 latest
-                stable
               arguments: | 
                 --pull
                 --build-arg ADOBE_ANALYTICS_URL=$(ADOBE_ANALYTICS_URL)
@@ -56,5 +56,5 @@ stages:
               command: "push"
               tags: |
                 $(image.tag)
+                release-candidate
                 latest
-                stable
